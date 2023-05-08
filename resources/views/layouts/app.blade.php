@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Give Hope') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -26,7 +26,7 @@
         <header >
             <div class="">
                 <div class="container mb-4  mx-auto flex justify-center sm:justify-between items-center px-2 ">
-                   <div class="">
+                  <div class="">
                     <ul class="sm:flex justify-center  sm:items-center ">
                         <li class="pr-6 sm:my-0 my-2  sm:mx-0 mx-auto"><a href="#"> <i class="fa fa-phone"></i> +1 (454) 556-5656</a></li>
                         <li class=" sm:mx-0 mx-auto"><a href="#"> <i class="fa fa-envelope"></i>Yourmail@gmail.com</a></li>
@@ -59,35 +59,78 @@
                 
                 <nav id="main" class=" text-gray-600 text-md font-medium sm:text-base sm:flex sm:items-center absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-400 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 ">
                     <li class="pl-2 list-none  pt-2 sm:pt-0 ">
-                    <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="no-underline hover:underline" href="{{ route('campaigns.index') }}">{{ __('الحملات') }}</a>
+                    </li>
+                    <li class="pl-2 list-none  pt-2 sm:pt-0 ">
+                        <a class="no-underline hover:underline" href="{{ route('about') }}">{{ __('حول') }}</a>
+                    </li>
+                    <li class="pl-2 list-none  pt-2 sm:pt-0 ">
+                        <a class="no-underline hover:underline" href="{{ route('contact') }}">{{ __('تواصل معنا') }}</a>
                     </li>
                     @guest
-                           <li class="pl-2 list-none  pt-4 sm:pt-0 "> <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                     <li class="pl-2 list-none  pt-4 sm:pt-0 ">
-                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
                     </li>
                         @if (Route::has('register'))
-                           <li class="pl-2 list-none  pt-4 sm:pt-0 "> <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li class="pl-2 list-none  pt-4 sm:pt-0 ">
+                                <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('إنشاء حساب') }}</a>
+                            </li>
                         @endif
                     @else
                         <span>{{ Auth::user()->name }}</span>
-
                         <a href="{{ route('logout') }}"
-                           class="no-underline hover:underline"
-                           onclick="event.preventDefault();
+                        class="no-underline hover:underline"
+                        onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                             {{ csrf_field() }}
                         </form>
                     @endguest
                 </nav>
-           
             </div>
         </div>
         </header>
-
         @yield('content')
+        <footer>
+            <div class="flex">
+                <div>
+                    <a href="{{ url('/') }}" class="text-lg font-semibold text-black no-underline">
+                        {{ config('app.name', 'Give Hope') }}
+                    </a>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, eaque. Quaerat asperiores et hic fugiat, nulla voluptas similique! Quia, saepe.</p>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="px-6">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="pl-6">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+                <div>
+                    <h1>الخدمات</h1>
+                </div>
+                <div>
+                    <h1>تواصل معنا</h1>
+                    <p>+0534829048</p>
+                    <p>info@gmail.com</p>
+                    <p>Idlib</p>
+                </div>
+                <div>
+                    <h1>اخر الأخبار</h1>
+                    <div>
+                        <img src="" alt="">
+                        <div>
+
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </footer>
     </div>
-   
 </body>
 </html>

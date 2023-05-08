@@ -2,14 +2,9 @@
 
 @section('content')
 <main class="container-fluid  sm:mt-10">
-    
-    
-            
-
     <div class="relative  ">
         <ul id="slide" class="list-none">
             <li class="vh50-a relative ss">
-                
                 <img class="object-cover  h-full" src="{{url("img/1.png")}}" alt="">
                  <div class="absolute top-0 left-0 h-full w-full flex ">
                      <h2 class="text-4xl font-bold text-white my-auto w-full text-center">fghjkl <br> 

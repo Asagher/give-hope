@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\CampaignsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,9 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/',[PageController::class,'index']);
+Route::get('/about',[PageController::class,'about'])->name('about');
+Route::get('/contact',[PageController::class,'contact'])->name('contact');
+Route::resource('campaigns',CampaignsController::class);
 Auth::routes();
-
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
