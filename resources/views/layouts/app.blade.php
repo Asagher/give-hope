@@ -47,39 +47,39 @@
                 </div>
                 </div>
             </div>
-            <div  class="xl:container rounded-md absolute z-10  left-4  right-4 bg-green-400 mx-auto sm:flex flex justify-between items-center sm:justify-between sm:items-center sm:py-9 py-4 px-6">
+            <div  class="xl:container rounded-md absolute z-index-a  left-4  right-4 bg-green-400 mx-auto sm:flex flex justify-between items-center sm:justify-between sm:items-center sm:py-9 py-4 px-6">
                 <div>
-                    <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        {{ config('app.name', 'Laravel') }}
+                    <a href="{{ url('/') }}" class="text-2xl font-a  text-white no-underline">
+                       GiveHope
                     </a>
                 </div>
                 <span class="text-3xl cursor-pointer sm:hidden  block">
                     <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
                 </span>
                 
-                <nav id="main" class=" text-gray-600 text-md font-medium sm:text-base sm:flex sm:items-center absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-400 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 ">
-                    <li class="pl-2 list-none  pt-2 sm:pt-0 ">
+                <nav id="main" class=" sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-400 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 font-ya-a">
+                    <li class=" pr-5 list-none   pt-4 sm:pt-0 ">
                     <a class="no-underline hover:underline" href="{{ route('campaigns.index') }}">{{ __('الحملات') }}</a>
                     </li>
-                    <li class="pl-2 list-none  pt-2 sm:pt-0 ">
+                    <li class="pr-5 list-none  pt-5 sm:pt-0 ">
                         <a class="no-underline hover:underline" href="{{ route('about') }}">{{ __('حول') }}</a>
                     </li>
-                    <li class="pl-2 list-none  pt-2 sm:pt-0 ">
+                    <li class="pr-5 list-none  pt-5 sm:pt-0 ">
                         <a class="no-underline hover:underline" href="{{ route('contact') }}">{{ __('تواصل معنا') }}</a>
                     </li>
                     @guest
-                    <li class="pl-2 list-none  pt-4 sm:pt-0 ">
+                    <li class="pr-5 list-none  pt-5 sm:pt-0 ">
                         <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
                     </li>
                         @if (Route::has('register'))
-                            <li class="pl-2 list-none  pt-4 sm:pt-0 ">
+                            <li class="pr-5 list-none  pt-5 sm:pb-0 pb-3 sm:pt-0 ">
                                 <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('إنشاء حساب') }}</a>
                             </li>
                         @endif
                     @else
                         <span>{{ Auth::user()->name }}</span>
                         <a href="{{ route('logout') }}"
-                        class="no-underline hover:underline"
+                        class=" no-underline hover:underline"
                         onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
