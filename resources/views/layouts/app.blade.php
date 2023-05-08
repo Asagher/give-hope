@@ -92,44 +92,68 @@
         </header>
         @yield('content')
         <footer>
-            <div class="flex">
-                <div>
-                    <a href="{{ url('/') }}" class="text-lg font-semibold text-black no-underline">
-                        {{ config('app.name', 'Give Hope') }}
-                    </a>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, eaque. Quaerat asperiores et hic fugiat, nulla voluptas similique! Quia, saepe.</p>
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="px-6">
-                        <i class="fa-brands fa-pinterest-p"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="pl-6">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
+            <div class="container">
+                <div class="box">
+                    <h3>GiveHope</h3>
+                    <ul class="social">
+                        <li>
+                            <a href="#" class="facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quod aperiam repellat blanditiis atque quos ab quae magnam hic quasi? Libero tempora voluptas possimus minus. Maxime eaque doloribus magnam mollitia.</p>
                 </div>
-                <div>
-                    <h1>الخدمات</h1>
+                <div class="box">
+                    <ul class="links">
+                        <li><a href="#">Important Link 1</a></li>
+                        <li><a href="#">Important Link 2</a></li>
+                        <li><a href="#">Important Link 3</a></li>
+                        <li><a href="#">Important Link 4</a></li>
+                        <li><a href="#">Important Link 5</a></li>
+                    </ul>
                 </div>
-                <div>
-                    <h1>تواصل معنا</h1>
-                    <p>+0534829048</p>
-                    <p>info@gmail.com</p>
-                    <p>Idlib</p>
-                </div>
-                <div>
-                    <h1>اخر الأخبار</h1>
-                    <div>
-                        <img src="" alt="">
-                        <div>
-
+                <div class="box">
+                    <div class="line">
+                        <i class="fas fa-map-marked-alt fa-fw"></i>
+                        <div class="info">
+                            Syria , Aleppo
                         </div>
                     </div>
-                    <div></div>
+                    <div class="line">
+                        <i class="fas fa-clock fa-fw"></i>
+                        <div class="info">
+                            Business Hours : From 10:00 To 15:00
+                        </div>
+                    </div>
+                    <div class="line">
+                        <i class="fas fa-phone-volume fa-fw"></i>
+                        <div class="info">
+                            <span>+123456789</span>
+                            <span>+234567890</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box footer-gallery">
+                    <img src="{{url('img/1.png')}}" alt="">
+                    <img src="{{url('img/2.png')}}" alt="">
+                    <img src="{{url('img/3.png')}}" alt="">
+                    <img src="{{url('img/4.png')}}" alt="">
+                    <img src="{{url('img/5.png')}}" alt="">
+                    <img src="{{url('img/6.png')}}" alt="">
                 </div>
             </div>
+            <p class="copyright">Made With &lt;3 By Anas Hamo</p>
         </footer>
     </div>
 </body>
