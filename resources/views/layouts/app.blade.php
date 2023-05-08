@@ -94,7 +94,11 @@
         <footer>
             <div class="container">
                 <div class="box">
-                    <h3>GiveHope</h3>
+                    <h3>
+                        <a href="{{ url('/') }}" class="no-underline text-black">
+                             GiveHope
+                        </a>
+                    </h3>
                     <ul class="social">
                         <li>
                             <a href="#" class="facebook">
@@ -115,6 +119,11 @@
                     <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quod aperiam repellat blanditiis atque quos ab quae magnam hic quasi? Libero tempora voluptas possimus minus. Maxime eaque doloribus magnam mollitia.</p>
                 </div>
                 <div class="box">
+                    <h3>
+                        <a href="{{ url('/') }}" class="no-underline text-black">
+                             services
+                        </a>
+                    </h3>
                     <ul class="links">
                         <li><a href="#">Important Link 1</a></li>
                         <li><a href="#">Important Link 2</a></li>
@@ -124,6 +133,11 @@
                     </ul>
                 </div>
                 <div class="box">
+                    <h3>
+                        <a href="{{ url('/') }}" class="no-underline text-black">
+                              contact as
+                        </a>
+                    </h3>
                     <div class="line">
                         <i class="fas fa-map-marked-alt fa-fw"></i>
                         <div class="info">
@@ -145,15 +159,28 @@
                     </div>
                 </div>
                 <div class="box footer-gallery">
-                    <img src="{{url('img/1.png')}}" alt="">
-                    <img src="{{url('img/2.png')}}" alt="">
-                    <img src="{{url('img/3.png')}}" alt="">
-                    <img src="{{url('img/4.png')}}" alt="">
-                    <img src="{{url('img/5.png')}}" alt="">
-                    <img src="{{url('img/6.png')}}" alt="">
+                    <h3>
+                        <a href="{{ url('/') }}" class="no-underline text-black">
+                             top news
+                        </a>
+                    </h3>
+                    <div class="flex">
+                    <div>
+                        <img src="{{url('img/1.png')}}" alt="">
+                        <img src="{{url('img/2.png')}}" alt="">
+                        
+                    </div>
+                    <div>
+                        <img src="{{url('img/3.png')}}" alt="">
+                        <img src="{{url('img/4.png')}}" alt="">
+                    </div>
+                    <div>
+                        <img src="{{url('img/5.png')}}" alt="">
+                        <img src="{{url('img/6.png')}}" alt="">
+                    </div></div>
                 </div>
             </div>
-            <p class="copyright">Made With &lt;3 By Anas Hamo</p>
+            <p class="copyright">Made With &lt;3 By Wesal Husien</p>
         </footer>
     </div>
 </body>
