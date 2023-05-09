@@ -47,7 +47,7 @@
                 </div>
                 </div>
             </div>
-            <div  class="nav-a xl:container rounded-md absolute z-index-a  left-4  right-4 bg-green-400 mx-auto sm:flex flex justify-between items-center sm:justify-between sm:items-center sm:py-9 py-4 px-6">
+            <div  class="nav-a xl:container rounded-md absolute z-index-a  left-4  right-4 bg-green-300 mx-auto sm:flex flex justify-between items-center sm:justify-between sm:items-center sm:py-9 py-4 px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-2xl font-a  text-white no-underline">
                        GiveHope
@@ -57,7 +57,7 @@
                     <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
                 </span>
                 
-                <nav id="main" class="  sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-400 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 font-ya-a">
+                <nav id="main" class="  sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-300 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 font-ya-a">
                     <li class=" pr-5 list-none   pt-4 sm:pt-0 ">
                     <a class="no-underline hover:underline" href="{{ route('campaigns.index') }}">{{ __('الحملات') }}</a>
                     </li>
@@ -91,9 +91,9 @@
         </div>
         </header>
         @yield('content')
-        <footer>
+        <footer class="bg-green-200">
             <div class="container">
-                <div class="box">
+                <div class="box text-right">
                     <h3>
                         <a href="{{ url('/') }}" class="no-underline text-black">
                              GiveHope
@@ -116,52 +116,52 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro quod aperiam repellat blanditiis atque quos ab quae magnam hic quasi? Libero tempora voluptas possimus minus. Maxime eaque doloribus magnam mollitia.</p>
+                    <p class="text">  هي واحدة من أكبر الهيئات الخيرية غير الحكومية الرائدة في الخليج تأسست عام 1992م من أجل تطوير المجتمع القطري والمجتمعات المعوزة. وتعمل في مجالات مختلفة والتي من أهمها التنمية المستدامة، محاربة الفقر وإغاثة المنكوبين في حالات الطوارئ</p>
                 </div>
-                <div class="box">
+                <div class="box text-right">
                     <h3>
                         <a href="{{ url('/') }}" class="no-underline text-black">
-                             services
-                        </a>
-                    </h3>
-                    <ul class="links">
-                        <li><a href="#">Important Link 1</a></li>
-                        <li><a href="#">Important Link 2</a></li>
-                        <li><a href="#">Important Link 3</a></li>
-                        <li><a href="#">Important Link 4</a></li>
-                        <li><a href="#">Important Link 5</a></li>
-                    </ul>
-                </div>
-                <div class="box">
-                    <h3>
-                        <a href="{{ url('/') }}" class="no-underline text-black">
-                              contact as
+                            تواصل معنا
                         </a>
                     </h3>
                     <div class="line">
-                        <i class="fas fa-map-marked-alt fa-fw"></i>
                         <div class="info">
-                            Syria , Aleppo
+                            سوريا , إدلب
                         </div>
+                        <i class="fas fa-map-marked-alt fa-fw ml-5"></i>
                     </div>
                     <div class="line">
-                        <i class="fas fa-clock fa-fw"></i>
                         <div class="info">
-                            Business Hours : From 10:00 To 15:00
+                            ساعات العمل: من 10:00 إلى 15:00
                         </div>
+                        <i class="fas fa-clock fa-fw ml-5"></i>
                     </div>
                     <div class="line">
-                        <i class="fas fa-phone-volume fa-fw"></i>
                         <div class="info">
                             <span>+123456789</span>
                             <span>+234567890</span>
                         </div>
+                        <i class="fas fa-phone-volume fa-fw ml-5"></i>
                     </div>
                 </div>
-                <div class="box footer-gallery">
+                <div class="box text-right">
                     <h3>
                         <a href="{{ url('/') }}" class="no-underline text-black">
-                             top news
+                             الخدمات
+                        </a>
+                    </h3>
+                    <ul class="links">
+                        <li><a href="#">التطوع</a></li>
+                        <li><a href="#">المساعدة</a></li>
+                        <li><a href="#">التبرع</a></li>
+                        <li><a href="#">التطوع</a></li>
+                        <li><a href="#">التطوع</a></li>
+                    </ul>
+                </div>
+                <div class="box footer-gallery text-right">
+                    <h3>
+                        <a href="{{ url('/') }}" class="no-underline text-black">
+                            أخر الأخبار
                         </a>
                     </h3>
                     <div class="flex">
