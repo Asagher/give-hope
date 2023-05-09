@@ -17,12 +17,17 @@
 const fDiv = document.querySelector("#hide");
 const navShadow = document.querySelector(".nav-a");
 
+let animationFrameId = null;
+
 window.addEventListener("scroll", function () {
-  if (window.scrollY > fDiv.offsetHeight) {
-    fDiv.classList.add("hidden-a");
-  } else {
-    fDiv.classList.remove("hidden-a");
-  }
+  cancelAnimationFrame(animationFrameId);
+  animationFrameId = requestAnimationFrame(function () {
+    if (window.scrollY > fDiv.offsetHeight) {
+      fDiv.classList.add("hidden-a");
+    } else {
+      fDiv.classList.remove("hidden-a");
+    }
+  });
 });
 window.addEventListener("scroll", function () {
   if (window.scrollY > navShadow.offsetHeight) {

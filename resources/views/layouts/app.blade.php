@@ -24,7 +24,7 @@
 <body class="bg-white h-screen antialiased leading-none font-sans">
     <div id="app">
         <header >
-            <div id="hide" class="  da">
+            <div id="hide" class="h-16  da">
                 <div class="container mb-4  mx-auto flex justify-center sm:justify-between items-center px-2 ">
                   <div class="">
                     <ul class="sm:flex justify-center  sm:items-center ">
