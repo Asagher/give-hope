@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <div>
+    <div class="pt-32">
         <li>{{$campaign['name']}}</li>
     </div>
 @endsection

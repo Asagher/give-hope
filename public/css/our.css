@@ -285,18 +285,17 @@ footer .copyright {
 .contact-socials {
   display: flex;
   gap: 0.8rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
  justify-content: right;
 }
 
 .contact-socials a {
-  background: #31c48d;
+  background-color: #31c48d;
   font-size: 0.9rem;
   padding: 0.5rem;
-  border-radius: 50%;
+  border-radius: 7px;
   transition: var(--transtion);
 }
-
 .contact-socials a:hover {
   background: transparent;
 }
@@ -326,7 +325,7 @@ textarea {
   width: 100%;
   padding: 1rem;
   background: #bcf0da;
-  color:#fff;
+  color:#000000;
 }
 .contact-form input::placeholder,
 .contact-form textarea::placeholder{
@@ -396,6 +395,27 @@ section .btn:hover {
 }
 
 section .btn-primary {
-  background: #84e1bc;
+  background: #bcf0da;
   color: var(--color-black);
+}
+/* title */
+.main-title-a {
+  position: relative;
+  margin: 0px auto 80px;
+  padding: 10px 20px;
+  font-size: 40px;
+  font-weight: 500;
+  width: fit-content;
+  z-index: 1;
+}
+.main-title-a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 12px;
+  background-color: #bcf0da;
+  left: 0;
+  bottom: 0; 
+  transform: translateY(-50%);
+  z-index: -1;
 }
