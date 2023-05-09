@@ -24,7 +24,7 @@
 <body class="bg-white h-screen antialiased leading-none font-sans">
     <div id="app">
         <header >
-            <div class="">
+            <div id="hide" class="  da">
                 <div class="container mb-4  mx-auto flex justify-center sm:justify-between items-center px-2 ">
                   <div class="">
                     <ul class="sm:flex justify-center  sm:items-center ">
@@ -47,7 +47,7 @@
                 </div>
                 </div>
             </div>
-            <div  class="xl:container rounded-md absolute z-index-a  left-4  right-4 bg-green-400 mx-auto sm:flex flex justify-between items-center sm:justify-between sm:items-center sm:py-9 py-4 px-6">
+            <div  class="nav-a xl:container rounded-md absolute z-index-a  left-4  right-4 bg-green-400 mx-auto sm:flex flex justify-between items-center sm:justify-between sm:items-center sm:py-9 py-4 px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-2xl font-a  text-white no-underline">
                        GiveHope
@@ -57,7 +57,7 @@
                     <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
                 </span>
                 
-                <nav id="main" class=" sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-400 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 font-ya-a">
+                <nav id="main" class="  sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-400 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 font-ya-a">
                     <li class=" pr-5 list-none   pt-4 sm:pt-0 ">
                     <a class="no-underline hover:underline" href="{{ route('campaigns.index') }}">{{ __('الحملات') }}</a>
                     </li>

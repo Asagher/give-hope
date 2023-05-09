@@ -3,10 +3,9 @@
 @section('content')
 <main class="container-fluid  sm:mt-10">
     <div class="relative overlay-a  ">
-        <ul id="slide" class="list-none">
-            <li class="vh50-a relative ss">
-                <div class="h-full bg1-a">
-
+        <ul  class="list-none ">
+            <li class="vh50-a relative slide">
+                <div class="h-full bg1-a ">
                 </div>
                  <div class="absolute top-0 left-0 h-full w-full flex z-20 ">
                     <div class="w-full  flex flex-col self-center">
@@ -15,25 +14,25 @@
                     </div>
                  </div>
             </li>
-            <li class="vh50-a relative hidden ss">
+            <li class="vh50-a relative slide">
                 <div class="h-full bg2-a">
 
                 </div>
                  <div class="absolute top-0 left-0 h-full w-full flex z-20 ">
                     <div class="w-full  flex flex-col self-center">
-                     <h2 class="text-4xl font-bold text-white  w-full text-center">fghjkl</h2>
-                    <p class="text-lg mt-8 text-white  text-center" >gvcbbhgh</p>
+                     <h2 class="text-4xl font-bold text-white  w-full text-center">mcmvmvmcmvvcmjnsdfv</h2>
+                    <p class="text-lg mt-8 text-white  text-center" >fdghgfhgfhfgghgffbgf bfgbfgbf</p>
                     </div>
                  </div>
             </li>
-            <li class="vh50-a relative hidden">
+            <li class="vh50-a relative slide">
                 <div class="h-full bg3-a">
 
                 </div>
                  <div class="absolute top-0 left-0 h-full w-full flex  z-20">
                     <div class="w-full  flex flex-col self-center">
-                     <h2 class="text-4xl font-bold text-white  w-full text-center">fghjkl</h2>
-                    <p class="text-lg mt-8 text-white  text-center" >gvcbbhgh</p>
+                     <h2 class="text-4xl font-bold text-white  w-full text-center">uyruioir,if</h2>
+                    <p class="text-lg mt-8 text-white  text-center" >uyi78u</p>
                     </div>
                  </div>
             </li>
@@ -51,10 +50,10 @@
            
           <div class=" h-full w-full  flex justify-between  ">
             <div class="h-full w-full items-center  flex justify-between">
-            <span class=" bg-green-400 bg-opacity-50 py-6 px-0.5 rounded-3xl" onclick="prev()">
+            <span class=" bg-green-400 bg-opacity-50 py-6 px-0.5 rounded-3xl" onclick="moveSlide(-1)">
                 <ion-icon class="text-3xl text-white" name="chevron-back"></ion-icon>
             </span>
-            <span class=" bg-green-400 bg-opacity-50 py-6 px-0.5 rounded-3xl" onclick="next()">
+            <span class=" bg-green-400 bg-opacity-50 py-6 px-0.5 rounded-3xl" onclick="moveSlide(1)">
                 <ion-icon class="text-3xl text-white"  name="chevron-forward"></ion-icon>
             </span>
         </div>
