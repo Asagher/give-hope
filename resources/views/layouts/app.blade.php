@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Give Hope') }}</title>
+    <title>{{ config('app.name', 'GiveHope') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -77,14 +77,15 @@
                             </li>
                         @endif
                     @else
-                        <span>{{ Auth::user()->name }}</span>
+                        <span class="pr-5  pt-5 font-ya-a  uppercase underline cursor-pointer hover:text-gray-400 text-lg "><i class="fa-solid fa-user mr-2"></i>{{ Auth::user()->name }}</span>
                         <a href="{{ route('logout') }}"
-                        class=" no-underline hover:underline"
+                        class="pr-5  pt-5 no-underline hover:underline "
                         onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                document.getElementById('logout-form').submit();">{{ __('تسجيل الخروج') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                             {{ csrf_field() }}
                         </form>
+                        
                     @endguest
                 </nav>
             </div>
