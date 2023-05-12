@@ -9,9 +9,9 @@
             <div class="container contact-container bg-green-400">
                 <aside class="contact-aside bg-green-200">
                     <div class="aside-img">
-                        <img src="./images/contact.svg" alt="contact">
+                        {{-- <img src="./images/contact.svg" alt="contact"> --}}
                     </div>
-                    <p>  نحن واحدة من أكبر الهيئات الخيرية غير الحكومية الرائدة في الخليج تأسست عام 1992م من أجل تطوير المجتمع القطري والمجتمعات المعوزة. وتعمل في مجالات مختلفة والتي من أهمها التنمية المستدامة، محاربة الفقر وإغاثة المنكوبين في حالات الطوارئ</p>
+                    <p class="leading-6">  نحن واحدة من أكبر الهيئات الخيرية غير الحكومية الرائدة في الخليج تأسست عام 1992م من أجل تطوير المجتمع القطري والمجتمعات المعوزة. وتعمل في مجالات مختلفة والتي من أهمها التنمية المستدامة، محاربة الفقر وإغاثة المنكوبين في حالات الطوارئ</p>
                     <ul class="contact-details">
                         <li>
                             <h5>+234567890</h5>
@@ -28,17 +28,17 @@
                     </ul>
                     <ul class="contact-socials">
                         <li>
-                            <a href="#">
+                            <a class="px-1" href="#">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a class="px-1" href="#">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a class="px-1" href="#">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </li>

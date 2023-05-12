@@ -289,7 +289,7 @@ footer .copyright {
  justify-content: right;
 }
 
-.contact-socials a {
+.contact-socials li {
   background-color: #31c48d;
   font-size: 0.9rem;
   padding: 0.5rem;
@@ -417,5 +417,5 @@ section .btn-primary {
   left: 0;
   bottom: 0; 
   transform: translateY(-50%);
-  z-index: -1;
+ z-index: -1;
 }
