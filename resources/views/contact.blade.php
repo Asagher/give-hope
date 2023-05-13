@@ -1,7 +1,4 @@
 @extends('layouts.app')
-
-
-
 @section('content')
     <div class="pt-32">
         <h1 class="main-title-a">تواصل معنا</h1>

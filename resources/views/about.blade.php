@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="py-9">
-        <div class="bg1-a about-head-a">
+        <div class="bg-about-a about-head-a">
             <h1 class="main-title-a">حول</h1>
         </div>
           <div class="team " id="team">
