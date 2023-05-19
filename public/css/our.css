@@ -129,3 +129,8 @@
   transform: translateY(-50%);
   z-index: -1;
 }
+.form-input-a:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(50,200,100,.4);
+  border-color: #a4cafe;
+}
