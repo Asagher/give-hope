@@ -151,7 +151,7 @@
                 <div class="box text-right">
                     <h3>
                         <a href="{{ url('/') }}" class="no-underline text-black">
-                             الخدمات
+                            الخدمات
                         </a>
                     </h3>
                     <ul class="links">
