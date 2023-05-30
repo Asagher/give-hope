@@ -60,5 +60,29 @@
           </div>
         </div>
     </div>
+    <div class="counter0">
+        <div class="counter container">
+            <div class="container-a">
+                <i class="fas fa-utensils"></i>
+                <span class="num" data-val="400">0</span>
+                <span class="text">Meals</span>
+            </div>
+            <div class="container-a">
+                <i class="fas fa-utensils"></i>
+                <span class="num" data-val="350">0</span>
+                <span class="text">Meals</span>
+            </div>
+            <div class="container-a">
+                <i class="fas fa-utensils"></i>
+                <span class="num" data-val="300">0</span>
+                <span class="text">Meals</span>
+            </div>
+            <div class="container-a">
+                <i class="fas fa-utensils"></i>
+                <span class="num" data-val="299">0</span>
+                <span class="text">Meals</span>
+            </div>
+        </div>
+    </div>
 </main>
 @endsection

@@ -2,6 +2,7 @@
 // const menuBtn = document.querySelector("#menu");
 // const closeBtn = document.querySelector("#close");
 
+// const { document } = require("postcss");
 // menuBtn.addEventListener("click", () => {
 //   menu.style.display = "flex";
 //   closeBtn.style.display = "inline-block";
@@ -136,3 +137,19 @@ let timer = setInterval(function () {
   moveSlide(1);
 }, 4000);
 // nfdj
+// counter code
+  const scroll_a=document.querySelector(".counter")
+  if(window.scrollY>scroll_a.offsetHeight){
+  let valueDisplays = document.querySelectorAll(".num");
+  valueDisplays.forEach((valueDisplay)=>{
+    let startvalue=0;
+    let endvalue=parseInt(valueDisplay.getAttribute("data-val"));
+    let counter=setInterval(function(){
+      startvalue+=1;
+      valueDisplay.textContent=startvalue;
+      if(startvalue==endvalue){
+        clearInterval(counter);
+      }
+    },30)
+  });
+  }
