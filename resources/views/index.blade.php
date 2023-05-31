@@ -63,26 +63,73 @@
     <div class="counter0">
         <div class="counter container">
             <div class="container-a">
-                <i class="fas fa-utensils"></i>
+                <i class="fa fa-calendar-plus"></i>
                 <span class="num" data-val="400">0</span>
                 <span class="text">Meals</span>
             </div>
             <div class="container-a">
-                <i class="fas fa-utensils"></i>
+                <i class="fas fa-heartbeat"></i>
                 <span class="num" data-val="350">0</span>
                 <span class="text">Meals</span>
             </div>
             <div class="container-a">
-                <i class="fas fa-utensils"></i>
+                <i class="fas fa-handshake"></i>
                 <span class="num" data-val="300">0</span>
                 <span class="text">Meals</span>
             </div>
             <div class="container-a">
-                <i class="fas fa-utensils"></i>
+                <i class="fas fa-users"></i>
                 <span class="num" data-val="299">0</span>
                 <span class="text">Meals</span>
             </div>
         </div>
     </div>
+    <section class="faqs">
+        <h2 class="main-title-a">الأسئلة الشائعة</h2>
+        <div class="container faqs-container">
+            <article class="faq">
+                <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                <div class="question-answer">
+                    <h4>How do i know right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias vitae iure voluptatum maxime enim obcaecati? Consequatur vel libero iste magnam, dignissimos accusamus aliquid, illum sit eius quae, corporis atque!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                <div class="question-answer">
+                    <h4>How do i know right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias vitae iure voluptatum maxime enim obcaecati? Consequatur vel libero iste magnam, dignissimos accusamus aliquid, illum sit eius quae, corporis atque!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                <div class="question-answer">
+                    <h4>How do i know right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias vitae iure voluptatum maxime enim obcaecati? Consequatur vel libero iste magnam, dignissimos accusamus aliquid, illum sit eius quae, corporis atque!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                <div class="question-answer">
+                    <h4>How do i know right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias vitae iure voluptatum maxime enim obcaecati? Consequatur vel libero iste magnam, dignissimos accusamus aliquid, illum sit eius quae, corporis atque!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                <div class="question-answer">
+                    <h4>How do i know right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias vitae iure voluptatum maxime enim obcaecati? Consequatur vel libero iste magnam, dignissimos accusamus aliquid, illum sit eius quae, corporis atque!</p>
+                </div>
+            </article>
+            <article class="faq">
+                <div class="faq-icon"><i class="fa fa-plus"></i></div>
+                <div class="question-answer">
+                    <h4>How do i know right courses for me?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, alias vitae iure voluptatum maxime enim obcaecati? Consequatur vel libero iste magnam, dignissimos accusamus aliquid, illum sit eius quae, corporis atque!</p>
+                </div>
+            </article>
+        </div>
+    </section>
 </main>
 @endsection
