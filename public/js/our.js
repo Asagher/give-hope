@@ -138,21 +138,25 @@ let timer = setInterval(function () {
 }, 4000);
 // nfdj
 // counter code
-  const scroll_a=document.querySelector(".counter")
-  if(window.scrollY>scroll_a.offsetHeight){
-  let valueDisplays = document.querySelectorAll(".num");
-  valueDisplays.forEach((valueDisplay)=>{
-    let startvalue=0;
-    let endvalue=parseInt(valueDisplay.getAttribute("data-val"));
-    let counter=setInterval(function(){
-      startvalue+=1;
-      valueDisplay.textContent=startvalue;
-      if(startvalue==endvalue){
-        clearInterval(counter);
-      }
-    },30)
-  });
+const scroll_a = document.querySelector(".counter");
+function handleScroll() {
+  if (window.scrollY >= scroll_a.offsetHeight) {
+    let valueDisplays = document.querySelectorAll(".num");
+    valueDisplays.forEach((valueDisplay) => {
+      let startvalue = 0;
+      let endvalue = parseInt(valueDisplay.getAttribute("data-val"));
+      let counter = setInterval(function () {
+        startvalue += 1;
+        valueDisplay.textContent = startvalue;
+        if (startvalue == endvalue) {
+          clearInterval(counter);
+        }
+      }, 30);
+    });
+    window.removeEventListener("scroll", handleScroll);
   }
+}
+window.addEventListener("scroll", handleScroll);
   // faq code
 const faqs = document.querySelectorAll('.faq');
 faqs.forEach(faq => {
