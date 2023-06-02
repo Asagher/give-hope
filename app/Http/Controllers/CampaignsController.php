@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Campaign;
 class CampaignsController extends Controller
 {
     /**
@@ -11,18 +11,11 @@ class CampaignsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    private static function getData(){
-        return [
-            ['id'=>1,'name'=>'dell','price'=>123],
-            ['id'=>2,'name'=>'hp','price'=>45],
-            ['id'=>3,'name'=>'lenovo','price'=>86]
-        ];
-    }
+   
     public function index()
     {
-        return view('campaigns.index',[
-            'campaigns'=> self::getData()
-        ]);
+        return view('campaigns.index')->with('campaigns',Campaign::orderBy('startdate','DESC')->get());
+        
     }
 
     /**

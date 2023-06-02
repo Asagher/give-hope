@@ -54,14 +54,14 @@
                         </label>
                         <input id="male" type="radio" value="male"
                             class="form-radio  @error('gender') border-red-500 @enderror" name="gender"
-                            required autocomplete="gender">
+                             autocomplete="gender">
                             
                             <label for="famale" class="block text-gray-700 text-sm font-bold mx-2 sm:mb-4">
                                 {{ ('famale') }}:
                             </label>
                             <input id="famale" type="radio" value="famale"
                             class="form-radio @error('gender') border-red-500 @enderror" name="gender"
-                            required autocomplete="gender">
+                            autocomplete="gender">
                         </div>   
                         @error('gender')
                         <p class="text-red-500 text-xs italic mt-4">
@@ -77,7 +77,7 @@
 
     <input id="birthday" type="date" value="{{old('birthday')}}"
         class="form-input form-input-a w-full @error('birthday') border-red-500 @enderror" name="birthday"
-        required autocomplete="birthday">
+       autocomplete="birthday">
 
     @error('birthday')
     <p class="text-red-500 text-xs italic mt-4">

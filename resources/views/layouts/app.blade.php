@@ -80,6 +80,7 @@
                             </li>
                         @endif
                     @else
+                    
                         <span class="pr-5  pt-5 font-ya-a  uppercase underline cursor-pointer hover:text-gray-400 text-lg "><i class="fa-solid fa-user mr-2"></i>{{ Auth::user()->name }}</span>
                         <a href="{{ route('logout') }}"
                         class="pr-5  pt-5 no-underline hover:underline "
