@@ -47,15 +47,7 @@ class CampaignsController extends Controller
      */
     public function show($campaign)
     {
-        $campaigns = self::getData();
-
-        $index=array_search($campaign,array_column($campaigns,'id'));
-        if($index===false){
-            abort(404);
-        }
-        return view('campaigns.show',[
-            'campaign'=>$campaigns[$index]
-        ]);
+        
     }
 
     /**
