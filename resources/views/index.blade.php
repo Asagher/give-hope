@@ -84,6 +84,41 @@
             </div>
         </div>
     </div>
+    <div class="new-a">
+        <h1 class="main-title-a">اخر الأخبار</h1>
+        <div class="news container grid lg:grid-cols-2 sm:grid-cols-1 sm:h-full text-right h-96">
+            <div class="flex mb-5 mr-5 shadow-xl rounded-tl-lg rounded-bl-lg">
+                <div class="news-info p-2">
+                    <div class="px-6">
+                    <span class="text-gray-400">يناير 18 ,2020</span>
+                    <h2 class="text-xl font-semibold my-4">بناء مدرسة</h2>
+                    <p class="leading-6 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quos impedit, commodi dignissimos ipsum eius alias obcaecati consequuntur quibusdam facere.</p>
+                    </div>
+                    <div class=" py-6 px-6 w-full text-right relative " >
+                        <a class="text-gray-500 w-full pr-16 hover:text-green-500 font-medium  before-a" href="">عرض التفاصيل </a>
+                    </div>
+                </div>
+                <div class="news-imge">
+                    <img class="h-full w-full object-cover rounded-br-lg rounded-tr-lg" src="{{url('img/1.png')}}" alt="">
+                </div>
+            </div>
+            <div class="flex mb-5 shadow-xl rounded-tl-lg rounded-bl-lg">
+                <div class="news-info p-2">
+                    <div class="px-6">
+                    <span class="text-gray-400">يناير 18 ,2020</span>
+                    <h2 class="text-xl font-semibold my-3">بناء مدرسة</h2>
+                    <p class="leading-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quos impedit, commodi dignissimos ipsum eius alias obcaecati consequuntur quibusdam facere.</p>
+                    </div>
+                    <div class=" py-6 px-6 w-full text-right relative " >
+                        <a class="text-gray-500 w-full pr-16 hover:text-green-500 font-medium  before-a" href="">عرض التفاصيل </a>
+                    </div>
+                </div>
+                <div class="news-imge">
+                    <img class="h-full w-full object-cover rounded-br-lg rounded-tr-lg" src="{{url('img/1.png')}}" alt="">
+                </div>
+            </div>
+            </div>
+        </div>
     <section class="faqs">
         <h2 class="main-title-a">الأسئلة الشائعة</h2>
         <div class="container faqs-container">

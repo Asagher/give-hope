@@ -262,3 +262,13 @@
   border-radius: 3px;
   opacity: 0.38;
 }
+@media (max-width: 639px) {
+  .new-a{
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 505px) {
+  .new-a{
+    margin-bottom: 250px;
+  }
+}
