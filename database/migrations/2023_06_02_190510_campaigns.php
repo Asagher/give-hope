@@ -16,12 +16,15 @@ class Campaigns extends Migration
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->integer('goalAmount');
             $table->longText('description');
             $table->string('imgurl');
             $table->date("startdate");
             $table->date("enddate");
             $table->string('status');
+            $table->timestamps();
+
         });
     }
 

@@ -4,7 +4,7 @@
         <h1 class="main-title-a">تواصل معنا</h1>
         <section class="contact">
             <div class="container contact-container bg-green-400">
-                <aside class="contact-aside bg-green-200">
+                <aside class="contact-aside bg-green-100 ">
                     <div class="aside-img">
                         {{-- <img src="./images/contact.svg" alt="contact"> --}}
                     </div>
@@ -50,7 +50,7 @@
                     </div>
                     <input type="email" name="Email Adress" placeholder="عنوان البريد الإلكتروني" required>
                     <textarea name="Message" rows="7" placeholder="الرسالة" required></textarea>
-                    <button type="submit" class="btn btn-primary">إرسال</button>
+                    <button type="submit" class="btn btn-primary ">إرسال</button>
                 </form>
             </div>
         </section>

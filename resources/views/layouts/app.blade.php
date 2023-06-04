@@ -24,7 +24,7 @@
     <link href="{{ url('css/about.css') }}" rel="stylesheet">
     <link href="{{ url('css/contact.css') }}" rel="stylesheet">
 </head>
-<body class="bg-white h-screen antialiased leading-none font-sans">
+<body class="bg-white h-screen antialiased leading-none font-sans font-cairo-a ">
     <div id="app">
         <header >
             <div id="hide" class="h-16  da">
@@ -52,15 +52,15 @@
             </div>
             <div  class="nav-a xl:container rounded-md absolute z-index-a  left-4  right-4 bg-green-300 mx-auto sm:flex flex justify-between items-center sm:justify-between sm:items-center sm:py-9 py-4 px-6">
                 <div>
-                    <a href="{{ url('/') }}" class="text-2xl font-a  text-white no-underline">
-                       GiveHope
+                    <a href="{{ url('/') }}" class="text-xl sm:text-2xl font-semibold font-messiri-a text-white no-underline pl-3 ">
+                       اعطي أمل
                     </a>
                 </div>
-                <span class="text-3xl cursor-pointer sm:hidden  block">
+                <span class="text-3xl  cursor-pointer sm:hidden  block">
                     <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
                 </span>
                 
-                <nav id="main" class="  sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-300 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 font-ya-a">
+                <nav id="main" class="  sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-300 sm:static width95-a sm:w-auto left-0  top-12 opacity-0 sm:opacity-100 ">
                     <li class=" pr-5 list-none   pt-4 sm:pt-0 ">
                     <a class="no-underline hover:underline" href="{{ route('campaigns.index') }}">{{ __('الحملات') }}</a>
                     </li>
@@ -95,7 +95,13 @@
             </div>
         </div>
         </header>
+
+
         @yield('content')
+
+
+
+
         <footer class="bg-green-200">
             <div class="container">
                 <div class="box text-right">

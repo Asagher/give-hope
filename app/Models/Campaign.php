@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Campaign extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'id','title','slug','goalAmount','description','imgurl','startdate','enddate'
+    ];
 }
