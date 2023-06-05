@@ -92,7 +92,7 @@
                     <div class="px-6">
                     <span class="text-gray-400">يناير 18 ,2020</span>
                     <h2 class="text-xl font-semibold my-4">بناء مدرسة</h2>
-                    <p class="leading-6 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quos impedit, commodi dignissimos ipsum eius alias obcaecati consequuntur quibusdam facere.</p>
+                    <p class="leading-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quos impedit, commodi dignissimos ipsum eius alias obcaecati consequuntur quibusdam facere.</p>
                     </div>
                     <div class=" py-6 px-6 w-full text-right relative " >
                         <a class="text-gray-500 w-full pr-16 hover:text-green-500 font-medium  before-a" href="">عرض التفاصيل </a>
@@ -106,8 +106,8 @@
                 <div class="news-info p-2">
                     <div class="px-6">
                     <span class="text-gray-400">يناير 18 ,2020</span>
-                    <h2 class="text-xl font-semibold my-3">بناء مدرسة</h2>
-                    <p class="leading-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quos impedit, commodi dignissimos ipsum eius alias obcaecati consequuntur quibusdam facere.</p>
+                    <h2 class="text-xl font-semibold my-4">بناء مدرسة</h2>
+                    <p class="leading-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quos impedit, commodi dignissimos ipsum eius alias obcaecati consequuntur quibusdam facere.</p>
                     </div>
                     <div class=" py-6 px-6 w-full text-right relative " >
                         <a class="text-gray-500 w-full pr-16 hover:text-green-500 font-medium  before-a" href="">عرض التفاصيل </a>
