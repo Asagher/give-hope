@@ -96,18 +96,14 @@
         </div>
         </header>
 
-
         @yield('content')
-
-
-
 
         <footer class="bg-green-200">
             <div class="container">
                 <div class="box text-right">
                     <h3>
                         <a href="{{ url('/') }}" class="no-underline text-black">
-                             GiveHope
+                             اعطي أمل
                         </a>
                     </h3>
                     <ul class="social">

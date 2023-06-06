@@ -64,10 +64,12 @@
 
 
     </div>
+    @if(Auth::user()&&Auth::user()->role=='admin')
 
     <div class="py-10 ">
         <div class=" py-6 px-6 flex items-center justify-center" >
             <a class="text-white bg-gray-500  py-4 px-2 rounded-2xl hover:bg-green-500 font-medium" href="/campaigns/create">+ إضافة حملة</a>
         </div>
     </div>
+    @endif
 @endsection

@@ -22,7 +22,7 @@ class Campaigns extends Migration
             $table->string('imgurl');
             $table->date("startdate");
             $table->date("enddate");
-            $table->string('status');
+            $table->string('status')->default('نشط');
             $table->timestamps();
 
         });
