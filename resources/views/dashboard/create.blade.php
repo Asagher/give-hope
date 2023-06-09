@@ -1,7 +1,7 @@
 @extends('dashboard.index')
 @section('content')
 
-<div class="py-32 px-6">
+<div class="py-10 px-5">
     
 <div>
     <h2 class="main-title-a ">إضافة حملة جديدة </h2>

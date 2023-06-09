@@ -10,10 +10,11 @@ class AdminDashboard extends Controller
         public  function index () {
 
             return view('dashboard.index')->with('campaigns',Campaign::all());
-        }
+        }   
         public  function dd () {
 
-            return view('dashboard.showCampaign')->with('campaigns',Campaign::all());
+            return view('dashboard.showCampaign')->with('campaigns',Campaign::all())->with('user',User::all()
+            );
         }
         public  function campaign_create () {
 

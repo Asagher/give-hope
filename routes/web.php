@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\CampaignsController;
 use App\Http\Controllers\AdminDashboard;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -22,10 +23,12 @@ Route::get('/about',[PageController::class,'about'])->name('about');
 Route::get('/contact',[PageController::class,'contact'])->name('contact');
 Route::get('dashboard',[AdminDashboard::class,'index'])->name('dashboard');
 Route::get('dashboard/showCampaign',[AdminDashboard::class,'dd'])->name('dashboard/dd');
+
+
 Route::get('dashboard/create',[AdminDashboard::class,'campaign_create'])->name('dashboard/create-campagin');
 Route::get('dashboard/edit/{slug}',[AdminDashboard::class,'edit'])->name('dashboard/edit-campagin');
 
-
+Route::prefix('dashboard')->group(function (){Route::resource('users',UserController::class);});
 
 
 Route::resource('campaigns',CampaignsController::class);

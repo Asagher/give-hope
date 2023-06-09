@@ -2,6 +2,7 @@
 
 @section('content')
   <!-- delete -->
+  <a href=""></a>
  @if(session()->has('message'))
  <div class="bg-red-700 text-center py-4 lg:px-4">
     <div class="p-2 bg-red-500 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
@@ -26,15 +27,8 @@
       <div class="py-10 px-5">
           <h1 class="main-title-a">الحملات
           </h1>
-          {{Auth::user()->all()}}
-          {{-- @if(Auth::user()&&Auth::user()->role=='admin')
-  
-      <div class="py-1 ">
-          <div class=" py-4 px-2 flex justify-start " >
-              <a class="text-white bg-green-300 py-2 px-2 rounded-xl hover:bg-green-500 font-medium" href="{{route('dashboard/create-campagin')}}">+ إضافة حملة</a>
-          </div>
-      </div>
-      @endif --}}
+         
+          
           @if(count($campaigns)>0)
           <div>
           <div class="all container lg:grid lg:grid-cols-3 md:grid md:grid-cols-2  gap-4 ">
