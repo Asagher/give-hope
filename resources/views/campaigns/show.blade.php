@@ -117,7 +117,7 @@
                                 <h2>: اختر تبرع</h2>
                         </div>
             </div>
-            <div class="flex justify-center my-5">
+            <div class="flex justify-center my-5"> 
                 <button type="submit" class="px-5 py-3 rounded-md font-semibold text-white bg-green-400 hover:bg-green-600">تحديث التبرع</button>
             </div>
         </form>
