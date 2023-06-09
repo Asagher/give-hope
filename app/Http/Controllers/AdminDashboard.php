@@ -26,8 +26,16 @@ class AdminDashboard extends Controller
         
         }
 
+        public function __construct()
+        {
+            $this->middleware('auth')->only('storeDonation');
+        }
+
+
         public function storeDonation(Request $request, $slug)
     {
+
+        
         $request->validate([
             'donation' => 'required|numeric',
         ]);
