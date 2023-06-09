@@ -27,7 +27,7 @@
                      الهدف: ${{$campaign->goalAmount}}   
                     </span>
                     <span>
-                     المبلغ: ${{20000}} 
+                     المبلغ: ${{$campaign->donation}}
                     </span>
                     
                 </div>

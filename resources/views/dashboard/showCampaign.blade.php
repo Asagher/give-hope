@@ -52,7 +52,7 @@
                        الهدف: ${{$campaign->goalAmount}}   
                       </span>
                       <span>
-                       المبلغ: ${{20000}} 
+                       المبلغ: ${{$campaign->donation}} 
                       </span>
                       
                   </div>
@@ -78,9 +78,9 @@
                         <form action="{{ route('campaigns.destroy', $campaign->slug) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button class="bg-red-500 px-5 py-4 rounded-lg " type="submit">حذف الحملة </button>
+                            <button class="px-5 py-4 font-semibold hover:text-red-400" type="submit">حذف الحملة </button>
                         </form>
-                        <a class="bg-green-400 px-5 py-4 rounded-lg" href="/dashboard/edit/{{$campaign->slug}}">التعديل على الحملة</a>
+                        <a class="px-5 py-4 font-semibold hover:text-green-400" href="/dashboard/edit/{{$campaign->slug}}">التعديل على الحملة</a>
 
                     </div>
                   </div>

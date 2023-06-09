@@ -27,7 +27,7 @@
                 
                 <div class="py-2 px-6 text-right">
                     <span class="text-green-600 ">
-                        {{$campaign->status}}
+                        {{-- {{$campaign->status}} --}}
                     </span>
                     
                 </div>
@@ -85,13 +85,41 @@
         <form method="POST" action="{{ route('admin.storeDonation', $campaign->slug) }}">
             @csrf
             @method('PUT')
-        
-            <div class="bg-red-500 p-5">
-                <label for="donation">التبرع الجديد</label>
-                <input type="number" class="form-control" name="donation" value="{{ old('donation') }}">
+            <h2 class="main-title-a ">تبرع الأن</h2>
+            <div class="flex-col flex justify-center sm:flex-row container">
+                        <input type="number" class="p-3 form-control h-14 border-2 border-green-400" placeholder="40$" name="donation" value="{{ old('donation') }}">
+                        <div class="flex ml-6 p-3 items-center justify-center border-2 border-green-400 h-14 donation-a">
+                            <div>
+                                <label for="a" class="text-gray-700 text-sm font-bold mr-2 sm:mb-4">
+                                    {{ ('10') }}
+                                </label>
+                                <input id="a" type="radio" value="10"
+                                    class="mr-3 form-radio  @error('gender') border-red-500 @enderror" name="donation"
+                                    autocomplete="gender">
+                            </div>
+                            <div>
+                                <label for="b" class=" text-gray-700 text-sm font-bold mx-2 sm:mb-4">
+                                    {{ ('30') }}
+                                </label>
+                                <input id="b" type="radio" value="30"
+                                class="mr-3 form-radio @error('gender') border-red-500 @enderror" name="donation"
+                                autocomplete="gender">
+                            </div>   
+                            <div>
+                                <label for="c" class=" text-gray-700 text-sm font-bold mx-2 sm:mb-4">
+                                    {{ ('أخر') }}
+                                </label>
+                                <input id="c" type="radio" value="other"
+                                class="mr-3 form-radio  @error('gender') border-red-500 @enderror" name="donation"
+                                autocomplete="gender">
+                            </div>    
+                            
+                                <h2>: اختر تبرع</h2>
+                        </div>
             </div>
-        
-            <button type="submit" class="px-4 py-2 bg-gray-600">تحديث التبرع</button>
+            <div class="flex justify-center my-5">
+                <button type="submit" class="px-5 py-3 rounded-md font-semibold text-white bg-green-400 hover:bg-green-600">تحديث التبرع</button>
+            </div>
         </form>
     </div>
 @endsection
