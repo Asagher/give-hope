@@ -63,10 +63,10 @@ const list = document.querySelector("nav");
 function Menu(e) {
   if (e.name === "menu") {
     e.name = "close";
-    list.classList.remove("hidden");
+    list.classList.remove("head-nav-a");
   } else {
     e.name = "menu";
-    list.classList.add("hidden");
+    list.classList.add("head-nav-a");
   }
   // list.classList.remove("hidden");
   // e.name === "menu"

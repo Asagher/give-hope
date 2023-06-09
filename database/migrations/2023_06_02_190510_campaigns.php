@@ -18,7 +18,7 @@ class Campaigns extends Migration
             $table->string('title');
             $table->string('slug');
             $table->integer('goalAmount');
-            $table->integer('donation')->nullable();
+            $table->integer('donation')->default(0);
             $table->longText('description');
             $table->string('imgurl');
             $table->date("startdate");

@@ -277,11 +277,15 @@
   .new-a {
     margin-bottom: 150px;
   }
+  .head-nav-a{
+    display: none;
+  }
 }
 @media (max-width: 505px) {
   .new-a {
     margin-bottom: 250px;
   }
+  
 }
 
 @media (max-width: 639px) {

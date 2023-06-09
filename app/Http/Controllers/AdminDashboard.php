@@ -44,7 +44,7 @@ class AdminDashboard extends Controller
         $campaign->donation += $request->input('donation');
         $campaign->save();
 
-        return redirect()->back()->with('message', 'تم تحديث التبرع بنجاح.');
+        return redirect()->back()->with('message', 'شكرا على التبرع');
     }
     
 }
