@@ -14,7 +14,7 @@ class PageController extends Controller
         return view('index')->with('user1',Campaign::all());
     }
     public function about () {
-        return view('about');
+        return view('dashboard.index');
     }
     public function contact () {
         return view('contact');

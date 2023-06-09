@@ -1,42 +1,43 @@
-@extends('layouts.app')
+@extends('dashboard.index')
 @section('content')
 
-<div class="py-32">
+<div class="py-32 px-6">
     
 <div>
-    <h2 class="main-title-a ">إضافة حملة جديدة </h2>
+    <h2 class="main-title-a ">تعديل الحملة </h2>
 </div>
 
 
 <div class=" h-full container bg-green-400 text-right flex justify-center rounded-xl ">
 
 
-    <form class="w-3/4 py-10" action="/campaigns" enctype="multipart/form-data" method="POST" >
+    <form class="w-3/4 py-10" action="{{ route('campaigns.update', $campaigns->slug) }}" enctype="multipart/form-data" method="POST" >
         @csrf
-
+        @method('PUT')
         <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
             <div class="sm:col-span-2">
                 <label for="name" class="block mb-2 text-right font-medium text-gray-900 dark:text-white">عنوان الحملة</label>
-                <input type="text" name="title" id="name" class="text-right bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="أدخل اسم الحملة" required="">
+                <input type="text" value="{{$campaigns->title}}" name="title" id="name" class="text-right bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="أدخل اسم الحملة" required="">
             </div>
+           
             
             <div class="w-full sm:col-start-2">
                 <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">الهدف</label>
-                <input type="number" name="goalamount" id="price" class="bg-gray-50 text-right border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="$299" required="">
+                <input type="number" value="{{$campaigns->goalAmount}}" name="goalamount" id="price" class="bg-gray-50 text-right border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="$299" required="">
             </div>
           
             
             <div class="sm:col-span-2">
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">وصف عن الحملة</label>
-                <textarea id="description" name="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 text-right rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="اكتب وصف للحملة "></textarea>
+                <textarea id="description"  name="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 text-right rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="اكتب وصف للحملة ">{{$campaigns->description}}</textarea>
             </div>
             <div>
                 <label for="item-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">موعد البدء</label>
-                <input type="date" name="startdate" id="item-weight" class="bg-gray-50 text-right border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  required="">
+                <input type="date" value="{{$campaigns->startdate}}" name="startdate" id="item-weight" class="bg-gray-50 text-right border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  required="">
             </div> 
             <div>
                 <label for="item-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">موعد الإنتهاء</label>
-                <input type="date" name="enddate" id="item-weight" class="bg-gray-50 text-right border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"   required="">
+                <input type="date" value="{{$campaigns->enddate}}" name="enddate" id="item-weight" class="bg-gray-50 text-right border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"   required="">
             </div> 
             <div class="sm:col-span-2">
                 
@@ -47,9 +48,11 @@
             <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
             <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
         </div>
-        <input id="dropzone-file" name="image" type="file" class="hidden" />
+        
+        <input id="dropzone-file"  name="image" type="file" class="hidden" />
     </label>
-</div> 
+</div>
+ {{$campaigns->imgurl}}
 
              </div>
         </div>

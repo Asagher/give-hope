@@ -60,7 +60,7 @@ class CampaignsController extends Controller
             'description'=>$request->input('description'),
             'enddate'=>$request->input('enddate'),
         ]);
-        return redirect('/campaigns');
+        return redirect('/dashboard/showCampaign');
     }
 
     /**
@@ -80,9 +80,9 @@ class CampaignsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        return view('campaigns.edit');
     }
 
     /**
@@ -92,10 +92,35 @@ class CampaignsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    
+    
+      public function update(Request $request, $slug)
+                {
+                $request->validate([
+                'title' => 'required',
+                'goalamount'=>'required',
+                'description'=>'required',
+                'startdate'=>'required',
+                'enddate'=>'required',
+                'image'=>'nullable|mimes:jpg,png,jpeg|max:5048',
+                ]);
+                if($request->hasfile('image')){
+                        $newImageName=uniqid().'-'.$slug.'.'.$request->image->extension();
+                        $request->image->move(public_path('img'),$newImageName);
+                        Campaign::where('slug',$slug)->update(['imgurl'=>$newImageName,]);
+                }
+              
+
+                Campaign::where('slug',$slug)->update([
+                    'title'=>$request->input('title'),
+                    'goalAmount'=>$request->input('goalamount'),
+                    'slug'=> Str::slug($request->title, '-'),
+                    'startdate'=>$request->input('startdate'),
+                    'description'=>$request->input('description'),
+                    'enddate'=>$request->input('enddate'),
+                ]);
+                return redirect('/dashboard/showCampaign')->with('message1','تم التعديل بنجاح');
+               } 
 
     /**
      * Remove the specified resource from storage.
@@ -103,8 +128,10 @@ class CampaignsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        Campaign::where('slug',$slug)->delete();
+        return redirect('/dashboard/showCampaign')->with('message','تم الحذف بنجاح');
+
     }
 }

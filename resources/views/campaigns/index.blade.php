@@ -8,7 +8,8 @@
         <div class="all container lg:grid lg:grid-cols-3 md:grid md:grid-cols-2  gap-4 ">
             @foreach ($campaigns as $campaign)
 
-            <div class=" rounded-2xl h-full w-full    shadow-xl mb-7 ">
+           
+            <div class=" rounded-2xl h-full w-full flex flex-col justify-between  shadow-xl mb-7 ">
                 <div class="object-cover h-60   lg:60 md:h-72 w-full  " >
                     <img class=" rounded-t-2xl object-cover w-full h-60 lg:60 md:h-72  " src="/img/{{$campaign->imgurl}}" alt="photo">
                 </div>
@@ -18,9 +19,9 @@
                     </span>
                     
                 </div>
-                <div class="w-full  py-2 px-6">
-                    <hr>
-              </div>
+                      <div class="w-full  py-2 px-6">
+                          <hr>
+                      </div>
                 <div class="flex justify-between py-2 px-6 font-semibold">
                     <span >
                      الهدف: ${{$campaign->goalAmount}}   
@@ -33,25 +34,26 @@
                  <div class="w-full mt-2 py-2 px-6">
                       <hr>
                 </div>
-                <div class="w-full text-right">
-                    <h1 class="text-2xl font-semibold py-2 px-6  " >{{$campaign->title}}</h1>
-                    <p class="text-right py-2 px-6 leading-6">{{$campaign->description}}</p>
-    
-                    <div class="flex justify-between text-gray-400 py-2 px-6 font-semibold" >
-                   
-                    <span>
-                        {{$campaign->startdate}} الانتهاء
-                    </span>  
-                    <span>
-                       {{$campaign->enddate}} البدء
-                    </span>
-                    </div>
-                   
+                <div class="w-full text-right ">
+                    <h1 class="text-2xl font-semibold py-2 px-6  " >{{$campaign->title}}</h1>        
                 </div>
-                <div class=" py-6 px-6 w-full text-right relative " >
-                    <a class="text-gray-500 w-full pr-16 hover:text-green-500 font-medium  before-a" href="/campaigns/{{$campaign->slug}}">عرض التفاصيل </a>
+                <div class="w-full text-right h-24 ">
+                  <p class="text-right py-2 px-6 leading-6">{{$campaign->description}}</p>
                 </div>
-    
+                <div class="flex justify-end flex-col">
+                  <div class="flex justify-between text-gray-400 py-2 px-6 font-semibold" >          
+                      <span>
+                          {{$campaign->startdate}} الانتهاء
+                      </span>  
+                      <span>
+                         {{$campaign->enddate}} البدء
+                      </span>
+                      </div>
+                      <div class=" py-6 px-6 w-full  text-right content-end relative" >
+                       <a class="text-gray-500 w-full  hover:text-green-500 font-medium before-a pr-16 " href="/campaigns/{{$campaign->slug}}">عرض التفاصيل </a>
+                      </div>
+                </div>
+                
             </div>
         
             @endforeach
@@ -64,12 +66,5 @@
 
 
     </div>
-    @if(Auth::user()&&Auth::user()->role=='admin')
-
-    <div class="py-10 ">
-        <div class=" py-6 px-6 flex items-center justify-center" >
-            <a class="text-white bg-gray-500  py-4 px-2 rounded-2xl hover:bg-green-500 font-medium" href="/campaigns/create">+ إضافة حملة</a>
-        </div>
-    </div>
-    @endif
+   
 @endsection
