@@ -25,5 +25,18 @@ class AdminDashboard extends Controller
             return view('dashboard.edit')->with('campaigns',Campaign::where('slug',$slug)->first());
         
         }
+
+        public function storeDonation(Request $request, $slug)
+    {
+        $request->validate([
+            'donation' => 'required|numeric',
+        ]);
+
+        $campaign = Campaign::where('slug', $slug)->firstOrFail();
+        $campaign->donation += $request->input('donation');
+        $campaign->save();
+
+        return redirect()->back()->with('message', 'تم تحديث التبرع بنجاح.');
+    }
     
 }

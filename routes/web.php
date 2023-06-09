@@ -24,6 +24,9 @@ Route::get('/contact',[PageController::class,'contact'])->name('contact');
 Route::get('dashboard',[AdminDashboard::class,'index'])->name('dashboard');
 Route::get('dashboard/showCampaign',[AdminDashboard::class,'dd'])->name('dashboard/dd');
 
+Route::put('/campaign/{slug}', [AdminDashboard::class, 'storeDonation'])
+    ->name('admin.storeDonation');
+
 
 Route::get('dashboard/create',[AdminDashboard::class,'campaign_create'])->name('dashboard/create-campagin');
 Route::get('dashboard/edit/{slug}',[AdminDashboard::class,'edit'])->name('dashboard/edit-campagin');

@@ -10,6 +10,6 @@ class Campaign extends Model
     use HasFactory;
 
     protected $fillable=[
-        'id','title','slug','goalAmount','description','imgurl','startdate','enddate'
+        'id','title','slug','goalAmount','description','imgurl','startdate','enddate','donation'
     ];
 }
