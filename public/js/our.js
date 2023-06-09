@@ -61,9 +61,17 @@ window.addEventListener("scroll", function () {
 // });
 const list = document.querySelector("nav");
 function Menu(e) {
-  e.name === "menu"
-    ? ((e.name = "close"), list.classList.add("opacity-100"))
-    : ((e.name = "menu"), list.classList.remove("opacity-100"));
+  if (e.name === "menu") {
+    e.name = "close";
+    list.classList.remove("hidden");
+  } else {
+    e.name = "menu";
+    list.classList.add("hidden");
+  }
+  // list.classList.remove("hidden");
+  // e.name === "menu"
+  //   ? ((e.name = "close"), list.classList.add("block"))
+  //   : ((e.name = "menu"), list.classList.remove("block"));
 }
 // slider
 
@@ -157,17 +165,17 @@ function handleScroll() {
   }
 }
 window.addEventListener("scroll", handleScroll);
-  // faq code
-const faqs = document.querySelectorAll('.faq');
-faqs.forEach(faq => {
-        faq.addEventListener('click', () => {
-            faq.classList.toggle("open");
+// faq code
+const faqs = document.querySelectorAll(".faq");
+faqs.forEach((faq) => {
+  faq.addEventListener("click", () => {
+    faq.classList.toggle("open");
 
-            const icon = faq.querySelector(".faq-icon i");
-            if (icon.className === "fa fa-plus") {
-                icon.className = "fa fa-minus"
-            } else {
-                icon.className = "fa fa-plus"
-            }
-        })
-    })
+    const icon = faq.querySelector(".faq-icon i");
+    if (icon.className === "fa fa-plus") {
+      icon.className = "fa fa-minus";
+    } else {
+      icon.className = "fa fa-plus";
+    }
+  });
+});

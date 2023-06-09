@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminDashboard;
 use App\Http\Controllers\UserController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,23 +18,20 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('dashboard')->middleware('auth')->group(function(){
+
+    Route::get('/',[AdminDashboard::class,'index'])->name('dashboard');
+    Route::get('/showCampaign',[AdminDashboard::class,'dd'])->name('dashboard/dd');
+    Route::resource('users',UserController::class);
+    Route::get('/create',[AdminDashboard::class,'campaign_create'])->name('dashboard/create-campagin');
+    Route::get('/edit/{slug}',[AdminDashboard::class,'edit'])->name('dashboard/edit-campagin');
+});
 
 Route::get('/',[PageController::class,'index']);
 Route::get('/about',[PageController::class,'about'])->name('about');
 Route::get('/contact',[PageController::class,'contact'])->name('contact');
-Route::get('dashboard',[AdminDashboard::class,'index'])->name('dashboard');
-Route::get('dashboard/showCampaign',[AdminDashboard::class,'dd'])->name('dashboard/dd');
-
 Route::put('/campaign/{slug}', [AdminDashboard::class, 'storeDonation'])
     ->name('admin.storeDonation');
-
-
-Route::get('dashboard/create',[AdminDashboard::class,'campaign_create'])->name('dashboard/create-campagin');
-Route::get('dashboard/edit/{slug}',[AdminDashboard::class,'edit'])->name('dashboard/edit-campagin');
-
-Route::prefix('dashboard')->group(function (){Route::resource('users',UserController::class);});
-
-
 Route::resource('campaigns',CampaignsController::class);
 Auth::routes();
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
