@@ -27,12 +27,16 @@
             <div class=" rounded-2xl h-full w-full     mb-7 ">
                 
                 <div class="py-2 px-6 text-right">
-                    <span class="text-green-600 ">
+                    @if(($campaign->status)=="نشط")
+
+                    <span class="text-green-600 text-xl ">
                         {{$campaign->status}}
-                        
-                        {{-- {{$campaign->status}} --}}
-                    </span>
-                    
+                </span>
+                    @else
+                    <span class="text-red-600 text-xl ">
+                        {{$campaign->status}}
+                </span>
+                    @endif
                 </div>
                 <div class="w-full  py-2 px-6">
                     <hr>

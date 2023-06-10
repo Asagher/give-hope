@@ -39,9 +39,16 @@
                       <img class=" rounded-t-2xl object-cover w-full h-60 lg:60 md:h-72  " src="/img/{{$campaign->imgurl}}" alt="photo">
                   </div>
                   <div class="py-2 px-6 text-right">
-                      <span class="text-green-600 ">
-                          {{$campaign->status}}
-                      </span>
+                    @if(($campaign->status)=="نشط")
+
+                    <span class="text-green-600 text-xl ">
+                        {{$campaign->status}}
+                </span>
+                    @else
+                    <span class="text-red-600 text-xl ">
+                        {{$campaign->status}}
+                </span>
+                    @endif
                       
                   </div>
                         <div class="w-full  py-2 px-6">

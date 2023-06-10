@@ -506,6 +506,11 @@
             </ul>
           </div>
         </header>
+
+        @section('content')
+        <h1>hhhh</h1>
+        @endsection
+        
         <main class="h-full overflow-y-auto">
           @yield('content')
         </main>
