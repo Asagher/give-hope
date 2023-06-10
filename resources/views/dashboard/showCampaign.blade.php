@@ -85,9 +85,9 @@
                         <form action="{{ route('campaigns.destroy', $campaign->slug) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button class="px-5 py-4 font-semibold hover:text-red-400" type="submit">حذف الحملة </button>
+                            <button class=" py-4 font-semibold hover:text-red-400" type="submit">حذف الحملة </button>
                         </form>
-                        <a class="px-5 py-4 font-semibold hover:text-green-400" href="/dashboard/edit/{{$campaign->slug}}">التعديل على الحملة</a>
+                        <a class=" py-4 font-semibold hover:text-green-400" href="/dashboard/edit/{{$campaign->slug}}">التعديل على الحملة</a>
 
                     </div>
                   </div>

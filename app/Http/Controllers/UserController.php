@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Department;
+use Illuminate\Support\Facades\Auth;
+
+
 use Illuminate\Support\Facades\Hash;
 
 
@@ -38,12 +42,11 @@ class UserController extends Controller
             'role'=>'required',
             'email'=>'required',
             'password'=>'required',
-
-            
+            'name_dep'=>'required',
             ]);
-            
+            // dd($request);
 
-            User::create([
+            $user=User::create([
                 'name'=>$request->input('name'),
                 'email'=>$request->input('email'),
                 'role'=>$request->input('role'),
@@ -51,6 +54,13 @@ class UserController extends Controller
 
                 
             ]);
+            $isActive=$request->input('name_dep')=='تطوع'?2:1;
+            $department=Department::create([
+                'id_dep'=>$isActive,
+                'name_dep'=>$request->input('name_dep'),
+                'user_id'=>$user->id,
+            ]);
+            // dd($department);
             return redirect('/dashboard/users')->with('message2','تمت الاضافة بنجاح');
         
     }

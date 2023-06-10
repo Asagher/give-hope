@@ -508,7 +508,110 @@
         </header>
 
         @section('content')
-        <h1>hhhh</h1>
+            <div class="flex justify-center my-10 text-2xl">
+              {{Auth::user()->name}}  مرحبا بعودتك
+            </div>
+            <div class="flex justify-center">
+              <div class="progress-table-wrap bg-gray-100 shadow-lg">
+                  <div class="progress-table">
+                    <div class="table-head">
+                      <div class="serial">#</div>
+                      <div class="country">Countries</div>
+                      <div class="visit">Visits</div>
+                      <div class="percentage">Percentages</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">01</div>
+                      <div class="country"> <img src="{{url('img/f1.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-1" role="progressbar" style="width: 80%"
+                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">02</div>
+                      <div class="country"> <img src="{{url('img/f2.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-2" role="progressbar" style="width: 30%"
+                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">03</div>
+                      <div class="country"> <img src="{{url('img/f3.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-3" role="progressbar" style="width: 55%"
+                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">04</div>
+                      <div class="country"> <img src="{{url('img/f4.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-4" role="progressbar" style="width: 60%"
+                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">05</div>
+                      <div class="country"> <img src="{{url('img/f5.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-5" role="progressbar" style="width: 40%"
+                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">06</div>
+                      <div class="country"> <img src="{{url('img/f6.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-6" role="progressbar" style="width: 70%"
+                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">07</div>
+                      <div class="country"> <img src="{{url('img/f7.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-7" role="progressbar" style="width: 30%"
+                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="serial">08</div>
+                      <div class="country"> <img src="{{url('img/f8.jpg')}}" alt="flag">Canada</div>
+                      <div class="visit">645032</div>
+                      <div class="percentage">
+                        <div class="progress">
+                          <div class="progress-bar color-8" role="progressbar" style="width: 60%"
+                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         @endsection
         
         <main class="h-full overflow-y-auto">

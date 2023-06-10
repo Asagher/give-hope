@@ -52,8 +52,6 @@
         <input id="dropzone-file"  name="image" type="file" class="hidden" />
     </label>
 </div>
- {{$campaigns->imgurl}}
-
              </div>
         </div>
         <div class="flex items-end justify-end space-x-4 text-right pt-6">

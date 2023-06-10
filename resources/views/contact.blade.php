@@ -45,11 +45,11 @@
     
                 <form class="contact-form">
                     <div class="form-name">
-                        <input type="text" name="Last Name" placeholder="الأسم الأخير" required>
-                        <input type="text" name="First Name" placeholder="الأسم الأول" required>
+                        <input class="text-right" type="text" name="Last Name" placeholder="الأسم الأخير" required>
+                        <input class="text-right" type="text" name="First Name" placeholder="الأسم الأول" required>
                     </div>
-                    <input type="email" name="Email Adress" placeholder="عنوان البريد الإلكتروني" required>
-                    <textarea name="Message" rows="7" placeholder="الرسالة" required></textarea>
+                    <input class="text-right" type="email" name="Email Adress" placeholder="عنوان البريد الإلكتروني" required>
+                    <textarea class="text-right" name="Message" rows="7" placeholder="الرسالة" required></textarea>
                     <button type="submit" class="btn btn-primary ">إرسال</button>
                 </form>
             </div>
