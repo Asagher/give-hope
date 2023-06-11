@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Campaign;
+use App\Models\Export;
 use Illuminate\Support\Str;
 class CampaignsController extends Controller
 {
@@ -51,7 +52,7 @@ class CampaignsController extends Controller
         
 
 
-        Campaign::create([
+        $campaign=Campaign::create([
             'title'=>$request->input('title'),
             'goalAmount'=>$request->input('goalamount'),
             'imgurl'=>$newImageName,
@@ -59,6 +60,9 @@ class CampaignsController extends Controller
             'startdate'=>$request->input('startdate'),
             'description'=>$request->input('description'),
             'enddate'=>$request->input('enddate'),
+        ]);
+        Export::create([
+            'campaign_id'=>$campaign->id,
         ]);
         return redirect('/dashboard/showCampaign');
     }

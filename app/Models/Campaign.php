@@ -18,4 +18,7 @@ class Campaign extends Model
     public function payment() {
         return $this->hasMany(Payment::class);
     }
+    public function export() {
+        return $this->hasMany(Exoprt::class);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Department;
+use App\Models\Export;
 use Illuminate\Support\Facades\Auth;
 
 
