@@ -17,9 +17,11 @@ class CreateExportsTable extends Migration
             $table->increments('id');
             $table->string('total_salary')->default('نشط');
             $table->string('transferred_amout')->default('نشط');
-            $table->unsignedBigInteger('campaign_id');
+            // $table->unsignedBigInteger('campaign_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
-            $table->foreign('campaign_id')->references('id')->on('campaigns');
+            // $table->foreign('campaign_id')->references('id')->on('campaigns');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

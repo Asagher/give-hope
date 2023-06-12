@@ -27,6 +27,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Department::class);
     }
+    public function export() 
+    {
+        return $this->hasMany(Export::class);
+    }
+    public function campaign() 
+    {
+        return $this->belongsTo(Campaign::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -61,6 +61,10 @@ class UserController extends Controller
                 'name_dep'=>$request->input('name_dep'),
                 'user_id'=>$user->id,
             ]);
+            $export=Export::create([
+                'total_salary'=>$request->input('total_salary'),
+                'user_id'=>$user->id,
+            ]);
             // dd($department);
             return redirect('/dashboard/users')->with('message2','تمت الاضافة بنجاح');
         
@@ -86,8 +90,16 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard/users.edit')->with('userdata',User::where('id',$id)->first());
+        $data = [
+            'userdata' => User::where('id', $id)->first(),
+            'exportdata'=>Export::where('user_id',$id)->first(),
+            'depdata'=>Department::where('id',$id)->first(),
+        ];
         
+        return view('dashboard/users.edit', $data);
+        // return view('dashboard/users.edit')->with('userdata',User::where('id',$id)->first());
+        // return view('dashboard/users.edit')->with('exportdata',Export::where('id',$id)->first());
+        // return view('dashboard/users.edit')->with('depdata',Department::where('id',$id)->first());
     }
 
     /**
@@ -104,7 +116,7 @@ class UserController extends Controller
             'name' => 'required',
             'role'=>'required',
             'email'=>'required',
-            
+            'total_salary'=>'required',
             ]);
             
 
@@ -113,6 +125,14 @@ class UserController extends Controller
                 'email'=>$request->input('email'),
                 'role'=>$request->input('role'),
                 
+            ]);
+            // $isActive=$request->input('name_dep')=='تطوع'?2:1;
+            // Department::where('id',$id)->update([
+            //     'id_dep'=>$isActive,
+            //     'name_dep'=>$request->input('name_dep'),
+            // ]);
+            Export::where('user_id',$id)->update([
+                'total_salary'=>$request->input('total_salary'),
             ]);
             return redirect('/dashboard/users')->with('message1','تم التعديل بنجاح');
     }
@@ -125,6 +145,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        Department::where('user_id',$id)->delete();
+        Export::where('user_id',$id)->delete();
         User::where('id',$id)->delete();
         return redirect('/dashboard/users')->with('message','تم الحذف بنجاح');
         //

@@ -61,9 +61,9 @@ class CampaignsController extends Controller
             'description'=>$request->input('description'),
             'enddate'=>$request->input('enddate'),
         ]);
-        Export::create([
-            'campaign_id'=>$campaign->id,
-        ]);
+        // User::create([
+        //     'user_id'=>$campaign->id,
+        // ]);
         return redirect('/dashboard/showCampaign');
     }
 
