@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Campaign;
 use App\Models\donation;
 use App\Models\User;
+use App\Models\Department;
+use App\Models\Export;
 use App\Models\Payment;
 
 
@@ -15,11 +17,22 @@ class AdminDashboard extends Controller
         public  function index () {
 
             return view('dashboard.index')->with('campaigns',Campaign::all());
-        }   
+        }  
+        public  function ex_dep () {
+            // $users=User::all();
+            // $exports=Export::all();
+            // $dep=Department::all();
+            // $container=[];
+            // foreach($users as $user){
+            //     $container[$user->id]=[
+
+            //     ];
+            // }
+            return view('dashboard.ex_dep')->with('users',User::all())->with('exports',Export::all())->with('departments',Department::all());
+        } 
         public  function dd () {
 
-            return view('dashboard.showCampaign')->with('campaigns',Campaign::all())->with('user',User::all()
-            );
+            return view('dashboard.showCampaign')->with('campaigns',Campaign::all())->with('user',User::all());
         }
         public  function campaign_create () {
 

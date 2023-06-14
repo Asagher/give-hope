@@ -25,6 +25,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::resource('users',UserController::class);
     Route::get('/create',[AdminDashboard::class,'campaign_create'])->name('dashboard/create-campagin');
     Route::get('/edit/{slug}',[AdminDashboard::class,'edit'])->name('dashboard/edit-campagin');
+    Route::get('/ex_dep',[AdminDashboard::class,'ex_dep'])->name('dashboard/ex_dep');
 });
 
 Route::get('/',[PageController::class,'index']);

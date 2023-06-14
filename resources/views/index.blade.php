@@ -5,45 +5,28 @@
     <div class="relative overlay-a  ">
         <ul  class="list-none ">
             <li class="vh50-a relative slide">
+            @foreach ($user1 as $user)
                 <div class="h-full bg1-a ">
                 </div>
                  <div class="absolute top-0 left-0 h-full w-full flex z-20 ">
                     <div class="w-full  flex flex-col self-center">
-                     <h2 class="text-4xl font-bold text-white  w-full text-center">fghjkl</h2>
-                    <p class="text-lg mt-8 text-white  text-center" >gvcbbhgh</p>
+                     <h2 class="text-4xl font-bold text-white  w-full text-center">{{$user->title}}</h2>
+                    <p class="text-lg mt-8 text-white  text-center" >{{$user->description}}</p>
                     </div>
                  </div>
-            </li>
-            <li class="vh50-a relative slide">
-                <div class="h-full bg2-a">
+            @endforeach
 
-                </div>
-                 <div class="absolute top-0 left-0 h-full w-full flex z-20 ">
-                    <div class="w-full  flex flex-col self-center">
-                     <h2 class="text-4xl font-bold text-white  w-full text-center">mcmvmvmcmvvcmjnsdfv</h2>
-                    <p class="text-lg mt-8 text-white  text-center" >fdghgfhgfhfgghgffbgf bfgbfgbf</p>
-                    </div>
-                 </div>
             </li>
-            <li class="vh50-a relative slide">
-                <div class="h-full bg3-a">
-
-                </div>
-                 <div class="absolute top-0 left-0 h-full w-full flex  z-20">
-                    <div class="w-full  flex flex-col self-center">
-                     <h2 class="text-4xl font-bold text-white  w-full text-center">uyruioir,if</h2>
-                    <p class="text-lg mt-8 text-white  text-center" >uyi78u</p>
-                    </div>
-                 </div>
-            </li>
+           
+            
         </ul>
         <div >
 
         </div>
         <div class="absolute z-40 items-end  justify-center  top-0 left-1/4 flex w-1/2 h-full ">
-
-             <button class=" mb-32  border-none outline-none w-24 h-12 bg-green-400 rounded-xl text-white ">vf</button>
-
+            <div class="flex items-center justify-center text-center">
+                <a class=" mb-32 pt-3  border-none outline-none w-24 h-12 bg-green-400 rounded-xl text-white " href="{{route('campaigns.index')}}">تبرع الان</a>
+            </div>
         </div>
         <div class="absolute z-20 h-full top-0 left-0 w-full">
             

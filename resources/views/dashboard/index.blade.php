@@ -142,7 +142,7 @@
               
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="buttons.html"
+                href="{{route('dashboard/ex_dep')}}"
               >
                 <svg
                   class="w-5 h-5"
@@ -158,7 +158,7 @@
                     d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
                   ></path>
                 </svg>
-                <span class="ml-4">Buttons</span>
+                <span class="ml-4">Department</span>
               </a>
             </li>
             <li class="relative px-6 py-3">
@@ -342,7 +342,7 @@
              
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="buttons.html"
+                href="{{route('dashboard/ex_dep')}}"
               >
                 <svg
                   class="w-5 h-5"
@@ -358,7 +358,7 @@
                     d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
                   ></path>
                 </svg>
-                <span class="ml-4">Buttons</span>
+                <span class="ml-4">Department</span>
               </a>
             </li>
             <li class="relative px-6 py-3">
@@ -481,8 +481,10 @@
                     <li class="flex">
                       <a
                         class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                        href="" 
-                      >
+                        href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"
+                        >
                         <svg
                           class="w-4 h-4 mr-3"
                           aria-hidden="true"
@@ -497,7 +499,12 @@
                             d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                           ></path>
                         </svg>
-                        <span>تسجيل الخروج</span>
+                        <span>
+                          {{ __('تسجيل الخروج') }}
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                              {{ csrf_field() }}
+                          </form>
+                        </span>
                       </a>
                     </li>
                   </ul>
