@@ -34,7 +34,7 @@
  @endif
 <div class="py-10 px-5  ">
  
-        <h1 class="main-title-a">المستخدمين
+        <h1 class="main-title-a">الموظفين
         </h1>
     
         <div class="relative  shadow-md sm:rounded-lg overflow-x-auto overflow-y-hidden block">

@@ -75,10 +75,10 @@
                   <div class="flex justify-end flex-col">
                     <div class="flex justify-between text-gray-400 py-2 px-6 font-semibold" >          
                         <span>
-                            {{$campaign->startdate}} الانتهاء
+                            {{$campaign->enddate}} الانتهاء
                         </span>  
                         <span>
-                           {{$campaign->enddate}} البدء
+                           {{$campaign->startdate}} البدء
                         </span>
                         </div>
                         <div class=" py-6 px-6 w-full text-right flex items-center justify-between" >                        

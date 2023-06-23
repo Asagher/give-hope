@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="info ">
-                        <h3>Wesal Husien</h3>
+                        <h3>Wesal Haj Hassan</h3>
                         <p>Simple Short Description</p>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="info ">
-                        <h3>Wesal Husien</h3>
+                        <h3>Forat Bakayaa</h3>
                         <p>Simple Short Description</p>
                     </div>
                 </div>

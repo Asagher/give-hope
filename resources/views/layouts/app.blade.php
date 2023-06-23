@@ -193,7 +193,7 @@
                     </div></div>
                 </div>
             </div>
-            <p class="copyright">Made With &lt;3 By Wesal Husien</p>
+            <p class="copyright">Made With &lt;3 By Wesal Haj Hassan && Forat Bakayaa</p>
         </footer>
     </div>
 </body>

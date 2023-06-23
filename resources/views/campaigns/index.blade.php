@@ -7,8 +7,6 @@
         @if(count($campaigns)>0)
         <div class="all container lg:grid lg:grid-cols-3 md:grid md:grid-cols-2  gap-4 ">
             @foreach ($campaigns as $campaign)
-
-           
             <div class=" rounded-2xl h-full w-full flex flex-col justify-between  shadow-xl mb-7 ">
                 <div class="object-cover h-60   lg:60 md:h-72 w-full  " >
                     <img class=" rounded-t-2xl object-cover w-full h-60 lg:60 md:h-72  " src="/img/{{$campaign->imgurl}}" alt="photo">
@@ -50,10 +48,10 @@
                 <div class="flex justify-end flex-col">
                   <div class="flex justify-between text-gray-400 py-2 px-6 font-semibold" >          
                       <span>
-                          {{$campaign->startdate}} الانتهاء
+                          {{$campaign->enddate}} الانتهاء
                       </span>  
                       <span>
-                         {{$campaign->enddate}} البدء
+                         {{$campaign->startdate}} البدء
                       </span>
                       </div>
                       <div class=" py-6 px-6 w-full  text-right content-end relative" >

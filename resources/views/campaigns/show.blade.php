@@ -58,10 +58,10 @@
                     <div class="flex justify-between text-right text-gray-400 py-2 px-6 font-semibold" >
                    
                     <span>
-                        {{$campaign->startdate}} الانتهاء
+                        {{$campaign->enddate}} الانتهاء
                     </span>  
                     <span>
-                       {{$campaign->enddate}} البدء
+                       {{$campaign->startdate}} البدء
                     </span>
                     </div>
                    
