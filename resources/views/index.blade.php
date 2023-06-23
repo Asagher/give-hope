@@ -5,16 +5,18 @@
     <div class="relative overlay-a  ">
         <ul  class="list-none ">
             <li class="vh50-a relative slide">
-            @foreach ($user1 as $user)
                 <div class="h-full bg1-a ">
                 </div>
                  <div class="absolute top-0 left-0 h-full w-full flex z-20 ">
                     <div class="w-full  flex flex-col self-center">
+            @foreach ($user1 as $user)
+
                      <h2 class="text-4xl font-bold text-white  w-full text-center">{{$user->title}}</h2>
                     <p class="text-lg mt-8 text-white  text-center" >{{$user->description}}</p>
+            @endforeach
+
                     </div>
                  </div>
-            @endforeach
 
             </li>
            
