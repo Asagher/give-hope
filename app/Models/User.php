@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role',
+       
     ];
     public function departments() 
     {
@@ -34,6 +34,10 @@ class User extends Authenticatable
     public function campaign() 
     {
         return $this->belongsTo(Campaign::class);
+    }
+    public function employee() 
+    {
+        return $this->hasMany(Employee::class);
     }
     /**
      * The attributes that should be hidden for serialization.

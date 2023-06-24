@@ -9,6 +9,7 @@ use App\Models\donation;
 use App\Models\User;
 use App\Models\Department;
 use App\Models\Export;
+use App\Models\Employee;
 use App\Models\Payment;
 
 
@@ -18,18 +19,54 @@ class AdminDashboard extends Controller
 
             return view('dashboard.index')->with('campaigns',Campaign::all());
         }  
-        public  function ex_dep () {
-            // $users=User::all();
-            // $exports=Export::all();
-            // $dep=Department::all();
-            // $container=[];
-            // foreach($users as $user){
-            //     $container[$user->id]=[
+        public  function department () {
+            return view('dashboard.department.index')->with('departments',Department::all());
+        }
 
-            //     ];
-            // }
-            return view('dashboard.ex_dep')->with('users',User::all())->with('exports',Export::all())->with('departments',Department::all());
-        } 
+
+        // destroy department
+        public function destroy($id)
+    {
+        Employee::where('department_id',$id)->delete();
+        Department::where('id',$id)->delete();
+        
+        return redirect('/dashboard/department')->with('message','تم الحذف بنجاح');
+        //
+    }
+    // create department
+
+       public function create_department()
+    {
+        return view('dashboard/department.create');
+        
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store_department(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            ]);
+            // dd($request);
+
+            $dep=Department::create([
+                'name_department'=>$request->input('name'),
+                         
+            ]);
+
+            
+            // dd($department);
+            return redirect('/dashboard/department')->with('message2','تمت الاضافة بنجاح');
+        
+    }
+
+
+
         public  function dd () {
 
             return view('dashboard.showCampaign')->with('campaigns',Campaign::all())->with('user',User::all());
@@ -87,10 +124,6 @@ class AdminDashboard extends Controller
             'amount' => $request->input('donation'),
             'user_id' => Auth::id(), // Logged in user
             'campaign_id' => $campaign->id
-
-
-
-            
         ]);
         return redirect()->back()->with('message', 'شكرا على التبرع');
     }

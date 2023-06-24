@@ -62,10 +62,14 @@
                 
                 <nav id="main" class="  sm:text-white text-gray-600 text-md font-medium sm:text-base sm:flex-row flex flex-col items-end  absolute z-0 mt-4 sm:mt-0 py-3 sm:py-0 px-3 sm:px-0  bg-white sm:bg-green-300 sm:static width95-a sm:w-auto left-0  top-12 head-nav-a ">
                     
-                    @if(Auth::user()&&Auth::user()->role=='admin')
+                   
+                   
+                    @if (Auth::check() && Auth::user()->employee()->exists() && Auth::user()->employee->first()->role == 'admin') 
                     <li class=" pr-5 list-none   pt-4 sm:pt-0 ">
                         <a class="no-underline hover:underline" href="{{ route('dashboard') }}">{{ __('لوحة التحكم') }}</a>
                         </li>
+              
+
                     @endif
                     <li class=" pr-5 list-none   pt-4 sm:pt-0 ">
                     <a class="no-underline hover:underline" href="{{ route('campaigns.index') }}">{{ __('الحملات') }}</a>

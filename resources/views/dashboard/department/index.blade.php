@@ -33,54 +33,40 @@
   </div>
  @endif
 <div class="py-10 px-5  ">
-        <h1 class="main-title-a">الأقسام و الرواتب
-        </h1>
-    
-        <div class="relative  shadow-md sm:rounded-lg overflow-x-auto overflow-y-hidden block">
+        <h1 class="main-title-a">الأقسام</h1>
+        <div class="mb-8 relative  shadow-md sm:rounded-lg overflow-x-auto overflow-y-hidden block">
             
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 overflow-x-auto ">
                 <thead class="text-xs text-gray-700 uppercase bg-green-300 dark:bg-gray-700 dark:text-gray-400">
                     <tr class="sticky">
                         <th scope="col" class="px-6 py-3">
-                        User name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            id
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                        Salary
-                        </th>
-                        <th scope="col" class="px-6 py-3">
                         Department
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                          Action
+                          </th>
                     </tr>
                 </thead>
                 <tbody>
-                  @foreach($users as $user)
-                      @foreach($exports->where('user_id',$user->id) as $export)
+                  @foreach($departments as $department)
                               <tr class="sticky bg-white border-b-2 dark:bg-gray-900 dark:border-gray-700">
-                                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                  {{$user->name}}
-                                  </th>
                                   <td class="px-6 py-4">
-                                      {{$user->id}}
+                                      {{$department->name_department}}
                                   </td>
-                                  <td class="px-6 py-4">
-                                     {{$export->total_salary}}
-                                  </td>
-                      @endforeach
-                      @foreach($departments->where('user_id',$user->id) as $department)
-                                  <td class="px-6 py-4"> 
-                                    {{$department->name_dep}}
-                                      
-                                  </td>
-                              </tr>
-                      @endforeach
+                                  <td class="px-6 py-4 ">
+                                    {{-- <a href="/dashboard/users/{{$user->id}}/edit" class="ml-5 font-semibold text-green-600 hover:underline">تعديل</a> --}}
+                                    <form class="inline ml-5 py-8" action="{{ route('department.destroy', $department->id) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="font-semibold text-red-600  hover:underline " type="submit">حذف</button>
+                                    </form>
+                                </td>
+                               </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        
+        <a class="text-white bg-green-300 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" href="./department/create">إضافة قسم</a>
 </div>
 
 

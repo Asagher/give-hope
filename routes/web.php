@@ -18,14 +18,18 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('dashboard')->middleware('auth')->group(function(){
+Route::prefix('dashboard')->middleware('admin')->group(function(){
 
     Route::get('/',[AdminDashboard::class,'index'])->name('dashboard');
     Route::get('/showCampaign',[AdminDashboard::class,'dd'])->name('dashboard/dd');
     Route::resource('users',UserController::class);
     Route::get('/create',[AdminDashboard::class,'campaign_create'])->name('dashboard/create-campagin');
     Route::get('/edit/{slug}',[AdminDashboard::class,'edit'])->name('dashboard/edit-campagin');
-    Route::get('/ex_dep',[AdminDashboard::class,'ex_dep'])->name('dashboard/ex_dep');
+    Route::get('/department',[AdminDashboard::class,'department'])->name('dashboard/department');
+    Route::delete('/department/{id}',[AdminDashboard::class,'destroy'])->name('department.destroy');
+    Route::get('/department/create',[AdminDashboard::class,'create_department'])->name('dashboard/create');
+    Route::put('/department', [AdminDashboard::class, 'store_department'])
+    ->name('department.store_department');
 });
 
 Route::get('/',[PageController::class,'index']);

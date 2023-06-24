@@ -9,8 +9,5 @@ class export extends Model
 {
     use HasFactory;
     protected $fillable = ['id','total_salary','transferred_amout','user_id'];
-    public function user() 
-    {
-        return $this->belongsTo(User::class);
-    }
+  
 }

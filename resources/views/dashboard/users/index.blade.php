@@ -61,31 +61,32 @@
                 </thead>
                 <tbody>
                     @foreach($userdata as $user)
-                    <tr class="sticky bg-white border-b-2 dark:bg-gray-900 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{$user->name}}
-                        </th>
-                        <td class="px-6 py-4">
-                            {{$user->id}}
+                          <tr class="sticky bg-white border-b-2 dark:bg-gray-900 dark:border-gray-700">
+                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              {{$user->name}}
+                              </th>
+                              <td class="px-6 py-4">
+                                  {{$user->id}}
 
-                        </td>
-                        <td class="px-6 py-4">
-                            {{$user->email}}
+                              </td>
+                              <td class="px-6 py-4">
+                                  {{$user->email}}
 
-                        </td>
-                        <td class="px-6 py-4">
-                            {{$user->role}}
-
-                        </td>
-                        <td class="px-6 py-4 ">
-                            <a href="/dashboard/users/{{$user->id}}/edit" class="ml-5 font-semibold text-green-600 hover:underline">تعديل</a>
-                            <form class="inline ml-5 py-8" action="{{ route('users.destroy', $user->id) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <button class="font-semibold text-red-600  hover:underline " type="submit">حذف  </button>
-                            </form>
-                        </td>
-                    </tr>
+                              </td>
+                              <td class="px-6 py-4">
+                                  @foreach($emp->where('user_id',$user->id) as $em)
+                                        {{$em->role}}
+                                  @endforeach
+                              </td>
+                              <td class="px-6 py-4 ">
+                                  <a href="/dashboard/users/{{$user->id}}/edit" class="ml-5 font-semibold text-green-600 hover:underline">تعديل</a>
+                                  <form class="inline ml-5 py-8" action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                      @csrf
+                                      @method('delete')
+                                      <button class="font-semibold text-red-600  hover:underline " type="submit">حذف</button>
+                                  </form>
+                              </td>
+                          </tr>
                 @endforeach
                 </tbody>
             </table>

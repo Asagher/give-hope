@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Department;
 use App\Models\Export;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -16,7 +17,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('dashboard/users.index')->with('userdata',User::get());
+        return view('dashboard/users.index')->with('userdata',User::get())->with('emp',Employee::get());
     }
 
     /**
@@ -41,7 +42,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'role'=>'required',
-            'email'=>'required',
+            'email'=>'required|unique:users,email',
             'password'=>'required',
             'name_dep'=>'required',
             ]);
@@ -50,21 +51,19 @@ class UserController extends Controller
             $user=User::create([
                 'name'=>$request->input('name'),
                 'email'=>$request->input('email'),
-                'role'=>$request->input('role'),
-                'password' => Hash::make($request->input('password')),
-
-                
+                'password' => Hash::make($request->input('password')),           
             ]);
             $isActive=$request->input('name_dep')=='تطوع'?2:1;
-            $department=Department::create([
-                'id_dep'=>$isActive,
-                'name_dep'=>$request->input('name_dep'),
+            
+            $emp=Employee::create([
+                'department_id'=>$isActive,
                 'user_id'=>$user->id,
+                'salary'=>$request->input('total_salary'),
+                'password' => Hash::make($request->input('password')),           
             ]);
-            $export=Export::create([
-                'total_salary'=>$request->input('total_salary'),
-                'user_id'=>$user->id,
-            ]);
+
+           
+            
             // dd($department);
             return redirect('/dashboard/users')->with('message2','تمت الاضافة بنجاح');
         
@@ -92,7 +91,7 @@ class UserController extends Controller
     {
         $data = [
             'userdata' => User::where('id', $id)->first(),
-            'exportdata'=>Export::where('user_id',$id)->first(),
+            'employeedata'=>Employee::where('user_id',$id)->first(),
             'depdata'=>Department::where('id',$id)->first(),
         ];
         
@@ -114,25 +113,21 @@ class UserController extends Controller
         
         $request->validate([
             'name' => 'required',
-            'role'=>'required',
             'email'=>'required',
             'total_salary'=>'required',
             ]);
-            
-
             User::where('id',$id)->update([
                 'name'=>$request->input('name'),
-                'email'=>$request->input('email'),
-                'role'=>$request->input('role'),
-                
+                'email'=>$request->input('email'), 
             ]);
-            // $isActive=$request->input('name_dep')=='تطوع'?2:1;
+            $isActive=$request->input('name_dep')=='تطوع'?2:1;
             // Department::where('id',$id)->update([
             //     'id_dep'=>$isActive,
             //     'name_dep'=>$request->input('name_dep'),
             // ]);
-            Export::where('user_id',$id)->update([
-                'total_salary'=>$request->input('total_salary'),
+            Employee::where('user_id',$id)->update([
+                'salary'=>$request->input('total_salary'),
+                
             ]);
             return redirect('/dashboard/users')->with('message1','تم التعديل بنجاح');
     }
@@ -145,8 +140,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        Department::where('user_id',$id)->delete();
-        Export::where('user_id',$id)->delete();
+        
+        Employee::where('user_id',$id)->delete();
         User::where('id',$id)->delete();
         return redirect('/dashboard/users')->with('message','تم الحذف بنجاح');
         //
