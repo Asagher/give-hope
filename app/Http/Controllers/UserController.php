@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('dashboard/users.create');
+        return view('dashboard/users.create')->with('departments',Department::get());
         
     }
 
@@ -41,32 +41,25 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'role'=>'required',
+            // 'role'=>'required',
             'email'=>'required|unique:users,email',
             'password'=>'required',
-            'name_dep'=>'required',
+            'name_department'=>'required',
             ]);
             // dd($request);
-
             $user=User::create([
                 'name'=>$request->input('name'),
                 'email'=>$request->input('email'),
                 'password' => Hash::make($request->input('password')),           
-            ]);
-            $isActive=$request->input('name_dep')=='تطوع'?2:1;
-            
+            ]);            
             $emp=Employee::create([
-                'department_id'=>$isActive,
+                'department_id'=>$request->input('name_department'),
                 'user_id'=>$user->id,
                 'salary'=>$request->input('total_salary'),
                 'password' => Hash::make($request->input('password')),           
             ]);
-
-           
-            
             // dd($department);
-            return redirect('/dashboard/users')->with('message2','تمت الاضافة بنجاح');
-        
+            return redirect('/dashboard/users')->with('message2','تمت الاضافة بنجاح');   
     }
 
     /**
@@ -92,10 +85,9 @@ class UserController extends Controller
         $data = [
             'userdata' => User::where('id', $id)->first(),
             'employeedata'=>Employee::where('user_id',$id)->first(),
-            'depdata'=>Department::where('id',$id)->first(),
         ];
         
-        return view('dashboard/users.edit', $data);
+        return view('dashboard/users.edit', $data)->with('departments',Department::all());
         // return view('dashboard/users.edit')->with('userdata',User::where('id',$id)->first());
         // return view('dashboard/users.edit')->with('exportdata',Export::where('id',$id)->first());
         // return view('dashboard/users.edit')->with('depdata',Department::where('id',$id)->first());
@@ -116,17 +108,19 @@ class UserController extends Controller
             'email'=>'required',
             'total_salary'=>'required',
             ]);
+            // dd($request);
             User::where('id',$id)->update([
                 'name'=>$request->input('name'),
                 'email'=>$request->input('email'), 
             ]);
-            $isActive=$request->input('name_dep')=='تطوع'?2:1;
+            // $isActive=$request->input('name_dep')=='تطوع'?2:1;
             // Department::where('id',$id)->update([
             //     'id_dep'=>$isActive,
             //     'name_dep'=>$request->input('name_dep'),
             // ]);
             Employee::where('user_id',$id)->update([
                 'salary'=>$request->input('total_salary'),
+                'department_id'=>$request->input('name_department'),
                 
             ]);
             return redirect('/dashboard/users')->with('message1','تم التعديل بنجاح');

@@ -28,7 +28,15 @@
         </p>
         @enderror
     </div>
-        <div class="mb-6">
+    <div class="mb-6">
+        <label for="name_department" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">القسم</label>
+        <select name="name_department" id="">
+            @foreach ($departments as $department)
+            <option value="{{$department->id}}" name="{{$department->name_department}}">{{$department->name_department}}</option>
+            @endforeach
+        </select>
+    </div>
+        {{-- <div class="mb-6">
         <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">الدور</label>
         <input type="text" id="role" name="role" class="text-right 
             form-input-a bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
@@ -53,14 +61,13 @@
                 </label>
                 <input id="b" type="radio" value="إداري" class="mr-2 form-radio  @error('gender') @enderror" name="name_dep" autocomplete="gender">
             </div>
-            
         </div>
         @error('name_dep')
         <p class="text-red-500 text-xs italic mt-4">
             {{ $message }}
         </p>
         @enderror
-    </div>
+    </div> --}}
         <div class="mb-6">
             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">الراتب</label>
             <div class="flex justify-end">

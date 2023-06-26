@@ -26,7 +26,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('dashboard/users.create');
+        return view('dashboard/users.create')->with('departments',Department::get());
     }
 
     /**
@@ -42,7 +42,7 @@ class EmployeeController extends Controller
             'role'=>'required',
             'email'=>'required',
             'password'=>'required',
-            'name_dep'=>'required',
+            'name_departments'=>'required',
             ]);
             // dd($request);
 
@@ -51,19 +51,18 @@ class EmployeeController extends Controller
                 'email'=>$request->input('email'),
                 'role'=>$request->input('role'),
                 'password' => Hash::make($request->input('password')),
-
-                
+                'department_id'=>$request->input('name_department'),
             ]);
-            $isActive=$request->input('name_dep')=='تطوع'?2:1;
-            $department=Department::create([
-                'id_dep'=>$isActive,
-                'name_dep'=>$request->input('name_dep'),
-                'user_id'=>$user->id,
-            ]);
-            $export=Export::create([
-                'total_salary'=>$request->input('total_salary'),
-                'user_id'=>$user->id,
-            ]);
+            // $isActive=$request->input('name_dep')=='تطوع'?2:1;
+            // $department=Department::create([
+            //     // 'id_dep'=>$isActive,
+            //     'department_id'=>$request->input('name_department'),
+            //     'user_id'=>$employee->id,
+            // ]);
+            // $export=Export::create([
+            //     'total_salary'=>$request->input('total_salary'),
+            //     'user_id'=>$user->id,
+            // ]);
             // dd($department);
             return redirect('/dashboard/users')->with('message2','تمت الاضافة بنجاح');
     }
