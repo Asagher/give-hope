@@ -12,6 +12,7 @@ use App\Models\Export;
 use App\Models\Employee;
 use App\Models\Payment;
 
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AdminDashboard extends Controller
 {
@@ -23,7 +24,19 @@ class AdminDashboard extends Controller
             return view('dashboard.department.index')->with('departments',Department::all());
         }
 
-
+        public  function payment() {
+            return view('dashboard.payments')->with('pay',Payment::all())->with('campaign',Campaign::all());
+        }
+        //export 
+        public function exportPdf() {
+    
+            $payments = Payment::all();
+            view()->share('pay',$payments);
+            $pdf = \Barryvdh\DomPDF\Facade\PDF::loadView('dashboard/paymentExport')->setOption('isHtml5ParserEnabled', true)
+            ->setOption('isRemoteEnabled',true);
+            
+            return $pdf->download('payments.pdf');
+        }
         // destroy department
         public function destroy($id)
     {
