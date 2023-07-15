@@ -136,7 +136,8 @@ class CampaignsController extends Controller
      */
     public function destroy($slug)
     {
-        // Donation::where('campaign_id',$id)->delete();
+        $id = Campaign::where('slug',$slug)->first()->id;
+        Donation::where('campaign_id',$id)->delete();
         Campaign::where('slug',$slug)->delete();
         return redirect('/dashboard/showCampaign')->with('message','تم الحذف بنجاح');
     }

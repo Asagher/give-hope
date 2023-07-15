@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                     @foreach($pay as $user)
-                  {{$pay}}
+                        
                           <tr class="sticky bg-white border-b-2 dark:bg-gray-900 dark:border-gray-700">
                             
                               <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">

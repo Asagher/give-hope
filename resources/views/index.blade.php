@@ -4,6 +4,7 @@
 <main class="container-fluid  sm:mt-10">
     <div class="relative overlay-a  ">
         <ul  class="list-none ">
+            @if(count($user1)>0)
             @php
                 for($i=1;$i<=3;$i++){
             @endphp
@@ -22,6 +23,18 @@
             @php
                 }
             @endphp
+            @else
+                @php
+                    for($i=1;$i<=3;$i++){
+                @endphp
+                    <li class="vh50-a relative slide">
+                        <div class="h-full bg{{$i}}-a ">
+                        </div>
+                    </li>
+                @php
+                    }
+                @endphp
+            @endif
             
         </ul>
         <div class="absolute z-40 items-end  justify-center  top-0 left-1/4 flex w-1/2 h-full ">
