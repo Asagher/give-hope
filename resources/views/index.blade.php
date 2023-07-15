@@ -7,16 +7,18 @@
             @php
                 for($i=1;$i<=3;$i++){
             @endphp
+             @foreach ($user1 as $user) {
                     <li class="vh50-a relative slide">
                         <div class="h-full bg{{$i}}-a ">
                         </div>
-                        <div class="absolute top-0 left-0 h-full w-full flex z-20 ">
-                            <div class="w-full  flex flex-col self-center">
-                            <h2 class="text-4xl font-bold text-white  w-full text-center">{{--{{$user->title}}--}}</h2>
-                            <p class="text-lg mt-8 text-white  text-center" >{{--{{$user->description}}--}}</p>
+                            <div class="absolute top-0 left-0 h-full w-full flex z-20 ">
+                                <div class="w-full  flex flex-col self-center">
+                                <h2 class="text-4xl font-bold text-white  w-full text-center">{{$user->title}}</h2>
+                                <p class="text-lg mt-8 text-white  text-center" >{{$user->description}}</p>
+                                </div>
                             </div>
-                        </div>
                     </li>
+                }@endforeach
             @php
                 }
             @endphp
